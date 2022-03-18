@@ -10,7 +10,7 @@ I'm passionate about solving both the big and the little problems in life and I'
 ## 🚀 currently...
 
 You can find me pioneering new partnerships for social good as the Director of Outreach at **[Commit the Change](https://github.com/ctc-uci)**, 
-a student organization dedicated to providing innovative and customized software for Orange County nonprofits while giving student developers and designers meaningful opportunities to develop `tech with purpose!`
+a student organization dedicated to providing innovative and customized software for Orange County nonprofits to achieve greater social impact while giving student developers and designers meaningful opportunities to develop `tech with purpose!`
 
 ## 💭 in time...
 - 📧 If you'd like to contact me directly, [send me an email!](mailto:alanc16@uci.edu)
