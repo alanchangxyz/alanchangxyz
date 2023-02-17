@@ -8,19 +8,46 @@
   width: 100%;
 }
 
+.home1Top {
+  height: 50%;
+}
+
 .home1Left {
-  width: 50%;
+  width: 60%;
+  height: 100%;
   float: left;
 }
 
+.h1LText {
+  background-color: var(--light-purple);
+  border-radius: 20px;
+  /* border: 2px solid var(--purple); */
+  padding: 20px;
+  margin: 25px;
+  margin-top: 25%;
+}
+
 .home1Right {
-  width: 50%;
+  width: 40%;
+  height: 100%;
   float: right;
 }
 
 .home1Portrait {
-  width: 50%;
+  width: 60%;
   border-radius: 50%;
-  margin-left: 25%;
+  margin-left: 20%;
+  margin-top: 12%;
   box-shadow: -2px 8px 16px rgb(0 0 0 / 20%);
+}
+
+.home1Bottom {
+  padding: 25px;
+}
+
+.h1BText {
+  background-color: var(--light-purple);
+  border-radius: 20px;
+  /* border: 2px solid var(--purple); */
+  padding: 20px;
 }

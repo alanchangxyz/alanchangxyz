@@ -22,14 +22,29 @@ const Home = () => {
       <motion.div
         className={styles.home1}
         variants={animationConfigs.scale(0.5, 0.6)}
-        transition={transitionConfigs.spring(1.5, 0, 0.2)}
+        transition={transitionConfigs.spring(1, 0, 0.2)}
         {...animationStates.animate}
       >
-        <div className={styles.home1Left}>
-          Hello!
+        <div className={styles.home1Top}>
+          <div className={styles.home1Left}>
+            <div className={styles.h1LText}>
+              Hello!
+            </div>
+          </div>
+          <div className={styles.home1Right}>
+            <motion.img
+              src={portrait}
+              className={styles.home1Portrait}
+              {...animationStates.animate}
+              variants={animationConfigs.opacity(0, 1, 0)}
+              transition={transitionConfigs.spring(1.5, 0.5, 0.2)}
+            />
+          </div>
         </div>
-        <div className={styles.home1Right}>
-          <img src={portrait} className={styles.home1Portrait} />
+        <div className={styles.home1Bottom}>
+          <div className={styles.h1BText}>
+            Hello!
+          </div>
         </div>
       </motion.div>
       {/* <Footer className="home-footer" /> */}
