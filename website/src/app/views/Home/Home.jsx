@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 // import Footer from '../../components/Footer/Footer';
 import { animationConfigs, animationStates, transitionConfigs } from '../../../util/animations';
 
+import portrait from '../../../images/portrait-sq.jpg';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -17,17 +18,22 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="ctc-home-bg">
+    <>
       <motion.div
-        className="ctc-home-1-bg"
+        className={styles.home1}
         variants={animationConfigs.scale(0.5, 0.6)}
-        transition={transitionConfigs.spring(1, 0, 0.2)}
+        transition={transitionConfigs.spring(1.5, 0, 0.2)}
         {...animationStates.animate}
       >
-        Hello!
+        <div className={styles.home1Left}>
+          Hello!
+        </div>
+        <div className={styles.home1Right}>
+          <img src={portrait} className={styles.home1Portrait} />
+        </div>
       </motion.div>
       {/* <Footer className="home-footer" /> */}
-    </div>
+    </>
   );
 };
 

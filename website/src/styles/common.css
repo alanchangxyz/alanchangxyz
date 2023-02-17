@@ -7,23 +7,13 @@ Commit the Change website environment styles.
 /* Inter Font */
 @import url("https://rsms.me/inter/inter.css");
 
-/* Montserrat Font */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); */
-
-/* Source Code Pro for timeline */
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
-
 /* Secondary and Accent Colors */
 :root {
-  --darkest-purple: #481dab;
-  --dark-purple: #6331d8;
-  --light-purple: #bea9ef;
+  --purple: #7529fa;
+  --light-purple: #f9f2ff;
   --orange: #fc5d03;
-  --yellow: #fc9803;
-  --dark-pink: #ed315d;
-  --light-pink: #f58ea6;
-  --lighter-pink: #fed4dd;
+  --light-orange: #ffecd1;
+  --light-pink: #fff2fb;
   --light-gray: #9b9b9b;
   -webkit-overflow-scrolling: touch;
 }
@@ -34,12 +24,12 @@ Commit the Change website environment styles.
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: #888;
+  border-radius: 2px;
+  background-color: #555;
 }
 
 ::-webkit-scrollbar-button {
@@ -67,48 +57,7 @@ Commit the Change website environment styles.
   cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
-  .top-panel {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .top-panel-text {
-    text-align: center;
-    padding: 0;
-    margin-left: 0;
-    width: 96%;
-    order: 1;
-    margin-bottom: 0;
-    margin-top: 8vh;
-  }
-
-  .inside-top-panel-text {
-    padding-left: 0;
-    float: none;
-  }
-
-  .top-panel-pic {
-    order: 2;
-    width: 100%;
-    margin-top: 25px;
-    padding: 0;
-    margin-bottom: 35%;
-    text-align: center;
-  }
-
-  .top-panel-title {
-    font-size: 36px;
-    line-height: 36px;
-  }
-
-  .top-panel-description {
-    font-size: 16px;
-    line-height: 22px;
-    margin-bottom: 15px;
-    padding: 0 20px;
-  }
+@media screen and (max-width: 850px) {
 
   .common-pink-button {
     font-size: 14px;

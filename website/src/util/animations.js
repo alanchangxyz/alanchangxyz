@@ -15,6 +15,16 @@ const animationConfigs = {
     animateIn: { height: animateHeight, opacity: 1 },
     animateOut: { height: endHeight, opacity: 0 },
   }),
+  width: (startWidth = 'auto', animateWidth = 'auto', endWidth = 'auto') => ({
+    initial: { width: startWidth, opacity: 0 },
+    animateIn: { width: animateWidth, opacity: 1 },
+    animateOut: { width: endWidth, opacity: 0 },
+  }),
+  heightAndWidth: (startHeight = 'auto', startWidth = 'auto', animateHeight = 'auto', animateWidth = 'auto', endHeight = 'auto', endWidth = 'auto') => ({
+    initial: { height: startHeight, width: startWidth, opacity: 0 },
+    animateIn: { height: animateHeight, width: animateWidth, opacity: 1 },
+    animateOut: { height: endHeight, width: endWidth, opacity: 0 },
+  }),
   transformX: (startX = 0, endX = 0) => ({
     initial: { x: startX, opacity: 0 },
     animateIn: { x: 0, opacity: 1 },
@@ -24,6 +34,11 @@ const animationConfigs = {
     initial: { y: startY, opacity: 0 },
     animateIn: { y: 0, opacity: 1 },
     animateOut: { y: endY, opacity: 0 },
+  }),
+  transformXY: (startX = 0, startY = 0, endX = 0, endY = 0) => ({
+    initial: { x: startX, y: startY, opacity: 0 },
+    animateIn: { x: 0, y: 0, opacity: 1 },
+    animateOut: { x: endX, y: endY, opacity: 0 },
   }),
   rotate: (startAngle = 0, endAngle = 0) => ({
     initial: { rotate: startAngle, opacity: 0 },
