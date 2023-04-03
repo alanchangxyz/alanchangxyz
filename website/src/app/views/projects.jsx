@@ -124,7 +124,7 @@ const projects = {
         <p>
           Inventory management of essential items spanning multiple warehouse
           locations, item categories, and organizational divisions within a
-          nonprofit focused on crisis meditation.
+          nonprofit focused on crisis mediation.
         </p>
       ),
     },
