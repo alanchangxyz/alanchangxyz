@@ -1,17 +1,18 @@
 /**
 
-Commit the Change website environment styles.
+Environment styles
 
 **/
 
-/* Inter Font */
-@import url("https://rsms.me/inter/inter.css");
+/* Figtree Font */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /* Secondary and Accent Colors */
 :root {
   --purple: #7529fa;
   --light-purple: #f9f2ff;
   --orange: #fc5d03;
+  --dark-orange: #eb5600;
   --light-orange: #ffecd1;
   --light-pink: #fff2fb;
   --light-gray: #9b9b9b;
@@ -19,7 +20,7 @@ Commit the Change website environment styles.
 }
 
 * {
-  font-family: Inter;
+  font-family: Figtree, sans-serif;
   max-width: 100%;
 }
 
@@ -37,10 +38,12 @@ Commit the Change website environment styles.
 }
 
 ::selection {
-  background: var(--light-purple); /* WebKit/Blink Browsers */
+  background: #222; /* WebKit/Blink Browsers */
+  color: #fff;
 }
 ::-moz-selection {
-  background: var(--light-purple); /* Gecko Browsers */
+  background: #222; /* Gecko Browsers */
+  color: #fff;
 }
 
 .common-button {
