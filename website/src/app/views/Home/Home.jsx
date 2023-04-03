@@ -59,26 +59,59 @@ function Home() {
                 transition={transitionConfigs.spring(0.75, 0.1, 0.2)}
               >
                 <div className={styles.h1LHeader}>
-                  <p className={styles.h1LHP}>
+                  <motion.p
+                    className={styles.h1LHP}
+                    variants={animationConfigs.transformX(-20, 20)}
+                    transition={transitionConfigs.simple(0.4, 0.4)}
+                    {...animationStates.whileInView(true)}
+                  >
                     Alan Chang
-                    <span className={styles.h1P}>[he/him]</span>
-                  </p>
-                  <p className={styles.h1LSH}>University of California, Irvine - Computer Science</p>
-                  {/* <p className={styles.h1LSH}>Computer Science @ University of California, Irvine</p> */}
+                    <motion.span
+                      className={styles.h1P}
+                      variants={animationConfigs.transformX(-20, 20)}
+                      transition={transitionConfigs.simple(0.4, 0.6)}
+                      {...animationStates.whileInView(true)}
+                    >
+                      [he/him]
+                    </motion.span>
+                  </motion.p>
+                  <motion.p
+                    className={styles.h1LSH}
+                    variants={animationConfigs.transformX(-20, 20)}
+                    transition={transitionConfigs.simple(0.5, 0.8)}
+                    {...animationStates.whileInView(true)}
+                  >
+                    University of California, Irvine - Computer Science
+                  </motion.p>
                 </div>
                 <div className={styles.h1BT}>
-                  <p className={styles.h1BP}>
+                  <motion.p
+                    className={styles.h1BP}
+                    variants={animationConfigs.transformY(-20, 20)}
+                    transition={transitionConfigs.spring(0.5, 1.3, 0.1)}
+                    {...animationStates.whileInView(true)}
+                  >
                     Passionate about using tech to bring about exceptional change and social good.
                     Currently building at{' '}
                     <a className={styles.h1RL} href="https://ctc-uci.com" alt="Commit the Change">Commit the Change</a>
                     {' '}and{' '}
                     <a className={styles.h1RL} href="https://hack.ics.uci.edu" alt="Hack at UCI">Hack at UCI</a>
                     !
-                  </p>
-                  <p className={styles.h1BP}>
+                  </motion.p>
+                  <motion.p
+                    className={styles.h1BP}
+                    variants={animationConfigs.transformY(-20, 20)}
+                    transition={transitionConfigs.spring(0.5, 1.3, 0.1)}
+                    {...animationStates.whileInView(true)}
+                  >
                     My interests include DevOps, AI & ML, and trying the best food Orange County has to offer. You can see my work and connect here 👇
-                  </p>
-                  <div className={styles.home1BottomBoxButtons}>
+                  </motion.p>
+                  <motion.div
+                    className={styles.home1BottomBoxButtons}
+                    variants={animationConfigs.transformX(-20, 20)}
+                    transition={transitionConfigs.spring(0.4, 1.5, 0.1)}
+                    {...animationStates.whileInView(true)}
+                  >
                     <a href="https://github.com/alanchangxyz" alt="alanchangxyz on Github">
                       <div
                         className={`${styles.h1Button} ${hovered === 'GitHub' && styles.h1ButtonHover}`}
@@ -133,7 +166,7 @@ function Home() {
                         view portfolio
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
