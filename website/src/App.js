@@ -1,17 +1,13 @@
-import React from 'react';
-import {
-  useLocation,
-  Routes,
-  Route,
-} from 'react-router-dom';
-import ReactGA from 'react-ga4';
-import { AnimatePresence } from 'framer-motion';
+import React from "react";
+import { useLocation, Routes, Route } from "react-router-dom";
+import ReactGA from "react-ga4";
+import { AnimatePresence } from "framer-motion";
 
-import Redirect from './app/components/Redirect/Redirect';
-import Home from './app/views/Home/Home';
+import Redirect from "./app/components/Redirect/Redirect";
+import Home from "./app/views/Home/Home";
 
 function App() {
-  ReactGA.initialize('G-H3X1SVSLE4');
+  ReactGA.initialize("G-H3X1SVSLE4");
   const location = useLocation();
 
   return (

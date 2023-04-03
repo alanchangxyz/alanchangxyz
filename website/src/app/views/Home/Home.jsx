@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
-  Download,
-  GitHub,
-  Grid,
-  Linkedin,
-  Mail,
-} from 'react-feather';
+  Download, GitHub, Grid, Linkedin, Mail,
+} from "react-feather";
 
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
-import useViewport from '../../../util/useViewport';
-import { animationConfigs, animationStates, transitionConfigs } from '../../../util/animations';
-import projects from '../projects';
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import useViewport from "../../../util/useViewport";
+import {
+  animationConfigs,
+  animationStates,
+  transitionConfigs,
+} from "../../../util/animations";
+import projects from "../projects";
 
-import portrait from '../../../images/portrait-circle.png';
+import portrait from "../../../images/portrait-circle.png";
 // import resume from '../../../resume-alan-chang-sp2023.pdf';
-import styles from './Home.module.css';
+import styles from "./Home.module.css";
 
 function Home() {
   const [hovered, setHovered] = useState(null);
@@ -91,11 +91,23 @@ function Home() {
                     transition={transitionConfigs.spring(0.5, 1.3, 0.1)}
                     {...animationStates.whileInView(true)}
                   >
-                    Passionate about using tech to bring about exceptional change and social good.
-                    Currently building at{' '}
-                    <a className={styles.h1RL} href="https://ctc-uci.com" alt="Commit the Change">Commit the Change</a>
-                    {' '}and{' '}
-                    <a className={styles.h1RL} href="https://hack.ics.uci.edu" alt="Hack at UCI">Hack at UCI</a>
+                    Passionate about using tech to bring about exceptional
+                    change and social good. Currently building at{" "}
+                    <a
+                      className={styles.h1RL}
+                      href="https://ctc-uci.com"
+                      alt="Commit the Change"
+                    >
+                      Commit the Change
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      className={styles.h1RL}
+                      href="https://hack.ics.uci.edu"
+                      alt="Hack at UCI"
+                    >
+                      Hack at UCI
+                    </a>
                     !
                   </motion.p>
                   <motion.p
@@ -104,7 +116,9 @@ function Home() {
                     transition={transitionConfigs.spring(0.5, 1.3, 0.1)}
                     {...animationStates.whileInView(true)}
                   >
-                    My interests include DevOps, AI & ML, and trying the best food Orange County has to offer. You can see my work and connect here 👇
+                    My interests include DevOps, AI & ML, and trying the best
+                    food Orange County has to offer. You can see my work and
+                    connect here 👇
                   </motion.p>
                   <motion.div
                     className={styles.home1BottomBoxButtons}
@@ -112,59 +126,80 @@ function Home() {
                     transition={transitionConfigs.spring(0.4, 1.5, 0.1)}
                     {...animationStates.whileInView(true)}
                   >
-                    <a href="https://github.com/alanchangxyz" alt="alanchangxyz on Github">
+                    <a
+                      href="https://github.com/alanchangxyz"
+                      alt="alanchangxyz on Github"
+                    >
                       <div
-                        className={`${styles.h1Button} ${hovered === 'GitHub' && styles.h1ButtonHover}`}
-                        onMouseOver={() => setHovered('GitHub')}
-                        onFocus={() => setHovered('GitHub')}
+                        className={`${styles.h1Button} ${
+                          hovered === "GitHub" && styles.h1ButtonHover
+                        }`}
+                        onMouseOver={() => setHovered("GitHub")}
+                        onFocus={() => setHovered("GitHub")}
                         onMouseLeave={() => setHovered(null)}
                       >
                         <GitHub className={styles.h1Icon} />
-                        <p className={styles.h1ButtonText}>
-                          @alanchangxyz
-                        </p>
+                        <p className={styles.h1ButtonText}>@alanchangxyz</p>
                       </div>
                     </a>
-                    <a href="https://linkedin.com/in/acxyz" alt="in/acxyz on LinkedIn">
+                    <a
+                      href="https://linkedin.com/in/acxyz"
+                      alt="in/acxyz on LinkedIn"
+                    >
                       <div
-                        className={`${styles.h1Button} ${hovered === 'LinkedIn' && styles.h1ButtonHover}`}
-                        onMouseOver={() => setHovered('LinkedIn')}
-                        onFocus={() => setHovered('LinkedIn')}
+                        className={`${styles.h1Button} ${
+                          hovered === "LinkedIn" && styles.h1ButtonHover
+                        }`}
+                        onMouseOver={() => setHovered("LinkedIn")}
+                        onFocus={() => setHovered("LinkedIn")}
                         onMouseLeave={() => setHovered(null)}
                       >
-                        <Linkedin className={`${styles.h1LinkedinIcon} ${styles.h1Icon}`} />
-                        <p className={styles.h1ButtonText}>
-                          /in/acxyz
-                        </p>
+                        <Linkedin
+                          className={`${styles.h1LinkedinIcon} ${styles.h1Icon}`}
+                        />
+                        <p className={styles.h1ButtonText}>/in/acxyz</p>
                       </div>
                     </a>
-                    <a href="mailto:alanc16@uci.edu" alt="Email me at alanc16@uci.edu">
+                    <a
+                      href="mailto:alanc16@uci.edu"
+                      alt="Email me at alanc16@uci.edu"
+                    >
                       <div
-                        className={`${styles.h1Button} ${hovered === 'Email' && styles.h1ButtonHover}`}
-                        onMouseOver={() => setHovered('Email')}
-                        onFocus={() => setHovered('Email')}
+                        className={`${styles.h1Button} ${
+                          hovered === "Email" && styles.h1ButtonHover
+                        }`}
+                        onMouseOver={() => setHovered("Email")}
+                        onFocus={() => setHovered("Email")}
                         onMouseLeave={() => setHovered(null)}
                       >
                         <Mail className={styles.h1Icon} />
-                        <p className={styles.h1ButtonText}>
-                          alanc16@uci.edu
-                        </p>
+                        <p className={styles.h1ButtonText}>alanc16@uci.edu</p>
                       </div>
                     </a>
                     <div
-                      className={`${styles.h1Button} ${hovered === 'Portfolio' && styles.h1ButtonHover}`}
+                      className={`${styles.h1Button} ${
+                        hovered === "Portfolio" && styles.h1ButtonHover
+                      }`}
                       role="button"
                       tabIndex={0}
-                      onMouseOver={() => setHovered('Portfolio')}
-                      onFocus={() => setHovered('Portfolio')}
+                      onMouseOver={() => setHovered("Portfolio")}
+                      onFocus={() => setHovered("Portfolio")}
                       onMouseLeave={() => setHovered(null)}
-                      onClick={() => document.getElementsByClassName(styles.home2)[0].scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                      onKeyDown={() => document.getElementsByClassName(styles.home2)[0].scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                      onClick={() => document
+                        .getElementsByClassName(styles.home2)[0]
+                        .scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        })}
+                      onKeyDown={() => document
+                        .getElementsByClassName(styles.home2)[0]
+                        .scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        })}
                     >
                       <Grid className={styles.h1Icon} />
-                      <p className={styles.h1ButtonText}>
-                        view portfolio
-                      </p>
+                      <p className={styles.h1ButtonText}>view portfolio</p>
                     </div>
                   </motion.div>
                 </div>
@@ -201,76 +236,115 @@ function Home() {
                 <div className={styles.home1BottomBoxHeader}>
                   <p className={styles.home1BottomBoxHeaderBig}>
                     Alan Chang
-                    <span className={styles.home1BottomBoxHeaderSmall}>[he/him]</span>
+                    <span className={styles.home1BottomBoxHeaderSmall}>
+                      [he/him]
+                    </span>
                   </p>
-                  <p className={styles.home1BottomBoxSubhead}>UC Irvine - Computer Science</p>
+                  <p className={styles.home1BottomBoxSubhead}>
+                    UC Irvine - Computer Science
+                  </p>
                 </div>
                 <div className={styles.home1BottomBoxBody}>
                   <p className={styles.home1BottomBoxBodyP}>
-                    Passionate about using tech to bring about exceptional change and social good.
-                    Currently building at{' '}
-                    <a className={styles.h1RL} href="https://ctc-uci.com" alt="Commit the Change">Commit the Change</a>
-                    {' '}and{' '}
-                    <a className={styles.h1RL} href="https://hack.ics.uci.edu" alt="Hack at UCI">Hack at UCI</a>
+                    Passionate about using tech to bring about exceptional
+                    change and social good. Currently building at{" "}
+                    <a
+                      className={styles.h1RL}
+                      href="https://ctc-uci.com"
+                      alt="Commit the Change"
+                    >
+                      Commit the Change
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      className={styles.h1RL}
+                      href="https://hack.ics.uci.edu"
+                      alt="Hack at UCI"
+                    >
+                      Hack at UCI
+                    </a>
                     !
                   </p>
                   <p className={styles.home1BottomBoxBodyP}>
-                    My interests include DevOps, AI & ML, and trying the best food Orange County has to offer. You can see my work and connect here 👇
+                    My interests include DevOps, AI & ML, and trying the best
+                    food Orange County has to offer. You can see my work and
+                    connect here 👇
                   </p>
                   <div className={styles.home1BottomBoxButtons}>
-                    <a href="https://github.com/alanchangxyz" alt="alanchangxyz on Github">
+                    <a
+                      href="https://github.com/alanchangxyz"
+                      alt="alanchangxyz on Github"
+                    >
                       <div
-                        className={`${styles.h1Button} ${hovered === 'GitHub' && styles.h1ButtonHover}`}
-                        onMouseOver={() => setHovered('GitHub')}
-                        onFocus={() => setHovered('GitHub')}
+                        className={`${styles.h1Button} ${
+                          hovered === "GitHub" && styles.h1ButtonHover
+                        }`}
+                        onMouseOver={() => setHovered("GitHub")}
+                        onFocus={() => setHovered("GitHub")}
                         onMouseLeave={() => setHovered(null)}
                       >
                         <GitHub className={styles.h1Icon} />
-                        <p className={styles.h1ButtonText}>
-                          @alanchangxyz
-                        </p>
+                        <p className={styles.h1ButtonText}>@alanchangxyz</p>
                       </div>
                     </a>
-                    <a href="https://linkedin.com/in/acxyz" alt="in/acxyz on LinkedIn">
+                    <a
+                      href="https://linkedin.com/in/acxyz"
+                      alt="in/acxyz on LinkedIn"
+                    >
                       <div
-                        className={`${styles.h1Button} ${hovered === 'LinkedIn' && styles.h1ButtonHover}`}
-                        onMouseOver={() => setHovered('LinkedIn')}
-                        onFocus={() => setHovered('LinkedIn')}
+                        className={`${styles.h1Button} ${
+                          hovered === "LinkedIn" && styles.h1ButtonHover
+                        }`}
+                        onMouseOver={() => setHovered("LinkedIn")}
+                        onFocus={() => setHovered("LinkedIn")}
                         onMouseLeave={() => setHovered(null)}
                       >
-                        <Linkedin className={`${styles.h1LinkedinIcon} ${styles.h1Icon}`} />
-                        <p className={styles.h1ButtonText}>
-                          /in/acxyz
-                        </p>
+                        <Linkedin
+                          className={`${styles.h1LinkedinIcon} ${styles.h1Icon}`}
+                        />
+                        <p className={styles.h1ButtonText}>/in/acxyz</p>
                       </div>
                     </a>
-                    <a href="mailto:alanc16@uci.edu" alt="Email me at alanc16@uci.edu">
+                    <a
+                      href="mailto:alanc16@uci.edu"
+                      alt="Email me at alanc16@uci.edu"
+                    >
                       <div
-                        className={`${styles.h1Button} ${hovered === 'Email' && styles.h1ButtonHover}`}
-                        onMouseOver={() => setHovered('Email')}
-                        onFocus={() => setHovered('Email')}
+                        className={`${styles.h1Button} ${
+                          hovered === "Email" && styles.h1ButtonHover
+                        }`}
+                        onMouseOver={() => setHovered("Email")}
+                        onFocus={() => setHovered("Email")}
                         onMouseLeave={() => setHovered(null)}
                       >
                         <Mail className={styles.h1Icon} />
-                        <p className={styles.h1ButtonText}>
-                          alanc16@uci.edu
-                        </p>
+                        <p className={styles.h1ButtonText}>alanc16@uci.edu</p>
                       </div>
                     </a>
                     <div
-                      className={`${styles.h1Button} ${hovered === 'Portfolio' && styles.h1ButtonHover}`}
+                      className={`${styles.h1Button} ${
+                        hovered === "Portfolio" && styles.h1ButtonHover
+                      }`}
                       role="button"
                       tabIndex={0}
-                      onMouseOver={() => setHovered('Portfolio')}
-                      onFocus={() => setHovered('Portfolio')}
+                      onMouseOver={() => setHovered("Portfolio")}
+                      onFocus={() => setHovered("Portfolio")}
                       onMouseLeave={() => setHovered(null)}
-                      onClick={() => document.getElementsByClassName(styles.home2)[0].scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                      onKeyDown={() => document.getElementsByClassName(styles.home2)[0].scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                      onClick={() => document
+                        .getElementsByClassName(styles.home2)[0]
+                        .scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        })}
+                      onKeyDown={() => document
+                        .getElementsByClassName(styles.home2)[0]
+                        .scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        })}
                     >
                       <Grid className={styles.h1Icon} />
-                      <p className={styles.h1ButtonText}>
-                        view portfolio
-                      </p>
+                      <p className={styles.h1ButtonText}>view portfolio</p>
                     </div>
                   </div>
                 </div>
@@ -289,46 +363,48 @@ function Home() {
           <div className={styles.home2SplitLeft}>
             <motion.div
               className={styles.home2ExperienceHeader}
-              variants={animationConfigs.transformX('-60%', '60%')}
+              variants={animationConfigs.transformX("-60%", "60%")}
               transition={transitionConfigs.spring(1.1, 0, 0.2)}
               {...animationStates.whileInView(true)}
             >
-              <p className={styles.home2ProjectsHeaderText}>
-                Experience
-              </p>
+              <p className={styles.home2ProjectsHeaderText}>Experience</p>
             </motion.div>
           </div>
           <div className={styles.home2SplitRight}>
-            <a href="/resume-alan-chang-sp2023.pdf" alt="Download Alan Chang's resume" download>
+            <a
+              href="/resume-alan-chang-sp2023.pdf"
+              alt="Download Alan Chang's resume"
+              download
+            >
               <motion.div
-                className={`${styles.home2DownloadHeader} ${hovered === 'Resume' && styles.h1ButtonHover}`}
-                onMouseOver={() => setHovered('Resume')}
-                onFocus={() => setHovered('Resume')}
+                className={`${styles.home2DownloadHeader} ${
+                  hovered === "Resume" && styles.h1ButtonHover
+                }`}
+                onMouseOver={() => setHovered("Resume")}
+                onFocus={() => setHovered("Resume")}
                 onMouseLeave={() => setHovered(null)}
-                variants={animationConfigs.transformX('60%', '-60%')}
+                variants={animationConfigs.transformX("60%", "-60%")}
                 transition={transitionConfigs.spring(1.1, 0, 0.2)}
                 {...animationStates.whileInView(true)}
               >
                 <Download className={styles.home2DownloadIcon} />
-                <p className={styles.home2DownloadHeaderText}>
-                  Resume
-                </p>
+                <p className={styles.home2DownloadHeaderText}>Resume</p>
               </motion.div>
             </a>
           </div>
         </div>
         <div className={styles.home2Projects}>
-          {projects.pro.map((p) => <ProjectCard key={p.name} {...p} />)}
+          {projects.pro.map((p) => (
+            <ProjectCard key={p.name} {...p} />
+          ))}
         </div>
         <motion.div
           className={styles.home2ProjectsHeader}
-          variants={animationConfigs.transformX('-60%', '60%')}
+          variants={animationConfigs.transformX("-60%", "60%")}
           transition={transitionConfigs.spring(1.1, 0, 0.2)}
           {...animationStates.whileInView(true)}
         >
-          <p className={styles.home2ProjectsHeaderText}>
-            Projects
-          </p>
+          <p className={styles.home2ProjectsHeaderText}>Projects</p>
         </motion.div>
         <motion.div
           className={styles.home2Projects}
@@ -336,7 +412,9 @@ function Home() {
           transition={transitionConfigs.spring(0.2, 0, 0.1)}
           {...animationStates.whileInView(true)}
         >
-          {projects.proj.map((p) => <ProjectCard key={p.name} {...p} />)}
+          {projects.proj.map((p) => (
+            <ProjectCard key={p.name} {...p} />
+          ))}
         </motion.div>
       </motion.div>
     </motion.div>

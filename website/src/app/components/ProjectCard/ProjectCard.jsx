@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { motion } from 'framer-motion';
+import React from "react";
+import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
-import { animationConfigs, animationStates, transitionConfigs } from '../../../util/animations';
-import styles from './ProjectCard.module.css';
+import {
+  animationConfigs,
+  animationStates,
+  transitionConfigs,
+} from "../../../util/animations";
+import styles from "./ProjectCard.module.css";
 
 function ProjectCard({
-  name,
-  subhead,
-  color,
-  description,
+  name, subhead, color, description,
 }) {
   return (
     <motion.div
@@ -18,7 +19,10 @@ function ProjectCard({
       transition={transitionConfigs.spring(1.25, 0, 0.2)}
       {...animationStates.whileInView(true)}
     >
-      <div className={styles.projectCardHeader} style={{ backgroundColor: color }}>
+      <div
+        className={styles.projectCardHeader}
+        style={{ backgroundColor: color }}
+      >
         <motion.p
           className={styles.projectCardText}
           variants={animationConfigs.opacity(0, 0)}
@@ -56,8 +60,8 @@ ProjectCard.propTypes = {
 };
 
 ProjectCard.defaultProps = {
-  subhead: '',
-  description: '',
+  subhead: "",
+  description: "",
 };
 
 export default ProjectCard;

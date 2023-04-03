@@ -27,11 +27,6 @@
     "lint": "eslint . --max-warnings=0",
     "prepare": "cd .. && husky install website/.husky"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": [
       "eslint --fix"

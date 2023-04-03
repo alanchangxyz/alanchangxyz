@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 const Redirect = ({ url }) => {
   useEffect(() => window.location.replace(url), []);

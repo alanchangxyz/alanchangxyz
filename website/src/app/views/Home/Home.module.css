@@ -1,8 +1,9 @@
-@import '../../../styles/common.css';
+@import "../../../styles/common.css";
 
 .home {
   background-color: var(--light-orange);
-  background-image: linear-gradient(to right, #f8e4c7 0.5px, transparent 1px), linear-gradient(to bottom, #f8e4c7 0.5px, transparent 1px);
+  background-image: linear-gradient(to right, #f8e4c7 0.5px, transparent 1px),
+    linear-gradient(to bottom, #f8e4c7 0.5px, transparent 1px);
   background-size: 30px 30px;
   height: 100vh;
   width: 100%;
@@ -12,7 +13,8 @@
 .home1 {
   min-height: 100vh;
   background-color: var(--light-orange);
-  background-image: linear-gradient(to right, #f8e4c7 0.5px, transparent 1px), linear-gradient(to bottom, #f8e4c7 0.5px, transparent 1px);
+  background-image: linear-gradient(to right, #f8e4c7 0.5px, transparent 1px),
+    linear-gradient(to bottom, #f8e4c7 0.5px, transparent 1px);
   background-size: 30px 30px;
   max-width: 100%;
   padding-bottom: 20px;
@@ -202,7 +204,8 @@
   min-height: calc(100vh - 50px);
   padding-top: 50px;
   background-color: var(--light-orange);
-  background-image: linear-gradient(to right, #f8e4c7 0.5px, transparent 1px), linear-gradient(to bottom, #f8e4c7 0.5px, transparent 1px);
+  background-image: linear-gradient(to right, #f8e4c7 0.5px, transparent 1px),
+    linear-gradient(to bottom, #f8e4c7 0.5px, transparent 1px);
   background-size: 30px 30px;
   max-width: 100%;
   overflow-x: hidden;
@@ -214,7 +217,8 @@
   justify-content: space-around;
 }
 
-.home2SplitLeft, .home2SplitRight {
+.home2SplitLeft,
+.home2SplitRight {
   width: 50%;
 }
 
@@ -334,7 +338,10 @@
     height: 22px;
   }
 
-  .h1LSH, .h1P, .h1BP, .h1ButtonText {
+  .h1LSH,
+  .h1P,
+  .h1BP,
+  .h1ButtonText {
     font-size: 16px;
   }
 
@@ -522,7 +529,8 @@
     width: 95%;
   }
 
-  .home2ExperienceHeaderText, .home2ProjectsHeaderText {
+  .home2ExperienceHeaderText,
+  .home2ProjectsHeaderText {
     font-size: 20px;
   }
 

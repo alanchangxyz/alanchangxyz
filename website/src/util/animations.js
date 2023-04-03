@@ -10,17 +10,28 @@ const animationConfigs = {
     animateIn: { scaleY: 1, opacity: 1 },
     animateOut: { scaleY: endScale, opacity: 0 },
   }),
-  height: (startHeight = 'auto', animateHeight = 'auto', endHeight = 'auto') => ({
+  height: (
+    startHeight = "auto",
+    animateHeight = "auto",
+    endHeight = "auto",
+  ) => ({
     initial: { height: startHeight, opacity: 0 },
     animateIn: { height: animateHeight, opacity: 1 },
     animateOut: { height: endHeight, opacity: 0 },
   }),
-  width: (startWidth = 'auto', animateWidth = 'auto', endWidth = 'auto') => ({
+  width: (startWidth = "auto", animateWidth = "auto", endWidth = "auto") => ({
     initial: { width: startWidth, opacity: 0 },
     animateIn: { width: animateWidth, opacity: 1 },
     animateOut: { width: endWidth, opacity: 0 },
   }),
-  heightAndWidth: (startHeight = 'auto', startWidth = 'auto', animateHeight = 'auto', animateWidth = 'auto', endHeight = 'auto', endWidth = 'auto') => ({
+  heightAndWidth: (
+    startHeight = "auto",
+    startWidth = "auto",
+    animateHeight = "auto",
+    animateWidth = "auto",
+    endHeight = "auto",
+    endWidth = "auto",
+  ) => ({
     initial: { height: startHeight, width: startWidth, opacity: 0 },
     animateIn: { height: animateHeight, width: animateWidth, opacity: 1 },
     animateOut: { height: endHeight, width: endWidth, opacity: 0 },
@@ -54,14 +65,14 @@ const animationConfigs = {
 
 const animationStates = {
   animate: {
-    initial: 'initial',
-    animate: 'animateIn',
-    exit: 'animateOut',
+    initial: "initial",
+    animate: "animateIn",
+    exit: "animateOut",
   },
   whileInView: (animateOnce) => ({
-    initial: 'initial',
-    whileInView: 'animateIn',
-    exit: 'animateOut',
+    initial: "initial",
+    whileInView: "animateIn",
+    exit: "animateOut",
     ...(animateOnce && { viewport: { once: true } }),
   }),
 };
@@ -69,7 +80,10 @@ const animationStates = {
 const transitionConfigs = {
   simple: (duration = 0, delay = 0) => ({ duration, delay }),
   spring: (duration = 0, delay = 0, bounce = 0) => ({
-    duration, delay, bounce, type: 'spring',
+    duration,
+    delay,
+    bounce,
+    type: "spring",
   }),
 };
 
