@@ -20,8 +20,8 @@ function App() {
           <Route path="/github" element={<Redirect url="https://github.com/alanchangxyz" />} />
           <Route path="/linkedin" element={<Redirect url="https://linkedin.com/in/acxyz" />} />
           <Route path="/the-county" element={<Redirect url="https://www.notion.so/acxyz/the-county-9c590d5f68b04125bb671fc2fd51d9fc" />} />
-          <Route path="/venmo" element={<Redirect url="https://venmo.com/alanchangxyz" />} />
-          <Route path="/venmo-app" element={<Redirect url="venmo://paycharge?txn=pay&recipients=alanchangxyz" />} />
+          <Route path="/venmo" element={<Redirect url="venmo://paycharge?txn=pay&recipients=alanchangxyz" />} />
+          <Route path="/venmo-p" element={<Redirect url="https://venmo.com/alanchangxyz" />} />
           <Route path="*" element={<Redirect url="/" />} />
         </Routes>
       </AnimatePresence>
