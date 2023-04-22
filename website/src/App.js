@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/the-county" element={<Redirect url="https://www.notion.so/acxyz/the-county-9c590d5f68b04125bb671fc2fd51d9fc" />} />
           <Route path="/venmo" element={<Redirect url="venmo://paycharge?txn=pay&recipients=alanchangxyz" />} />
           <Route path="/venmo-p" element={<Redirect url="https://venmo.com/alanchangxyz" />} />
-          <Route path="/netwics-slides" element={<Redirect url="https://docs.google.com/presentation/d/1t65EzhxGAYjgDQDcdoa9pvL2jk5JMLLUkUAQfLCoOTQ/edit?pli=1#slide=id.g210cc2df18a_0_322" />} />
+          <Route path="/netwics-slides" element={<Redirect url="https://docs.google.com/presentation/d/1t65EzhxGAYjgDQDcdoa9pvL2jk5JMLLUkUAQfLCoOTQ/edit?pli=1#slide=id.p" />} />
           <Route path="/netwics-demo" element={<Redirect url="https://codesandbox.io/s/netwics-workshop-s1ef3m?file=/src/App.js" />} />
           <Route path="*" element={<Redirect url="/" />} />
         </Routes>
