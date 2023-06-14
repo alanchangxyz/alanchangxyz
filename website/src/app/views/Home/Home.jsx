@@ -15,10 +15,13 @@ import {
 import projects from "../projects";
 
 import portrait from "../../../images/portrait-circle.png";
-// import resume from '../../../resume-alan-chang-sp2023.pdf';
 import styles from "./Home.module.css";
 
-function Home() {
+const EMAIL = "alan@alanchang.xyz";
+const LINKEDIN = "https://linkedin.com/in/acxyz";
+const RESUME = "/resume-alan-chang-sm2023.pdf";
+
+const Home = () => {
   const [hovered, setHovered] = useState(null);
   const { width } = useViewport();
 
@@ -143,7 +146,7 @@ function Home() {
                       </div>
                     </a>
                     <a
-                      href="https://linkedin.com/in/acxyz"
+                      href={LINKEDIN}
                       alt="in/acxyz on LinkedIn"
                     >
                       <div
@@ -161,8 +164,8 @@ function Home() {
                       </div>
                     </a>
                     <a
-                      href="mailto:alanc16@uci.edu"
-                      alt="Email me at alanc16@uci.edu"
+                      href={`mailto:${EMAIL}`}
+                      alt={`Email me at ${EMAIL}`}
                     >
                       <div
                         className={`${styles.h1Button} ${
@@ -173,7 +176,7 @@ function Home() {
                         onMouseLeave={() => setHovered(null)}
                       >
                         <Mail className={styles.h1Icon} />
-                        <p className={styles.h1ButtonText}>alanc16@uci.edu</p>
+                        <p className={styles.h1ButtonText}>{EMAIL}</p>
                       </div>
                     </a>
                     <div
@@ -288,7 +291,7 @@ function Home() {
                       </div>
                     </a>
                     <a
-                      href="https://linkedin.com/in/acxyz"
+                      href={LINKEDIN}
                       alt="in/acxyz on LinkedIn"
                     >
                       <div
@@ -306,8 +309,8 @@ function Home() {
                       </div>
                     </a>
                     <a
-                      href="mailto:alanc16@uci.edu"
-                      alt="Email me at alanc16@uci.edu"
+                      href={`mailto:${EMAIL}`}
+                      alt={`Email me at ${EMAIL}`}
                     >
                       <div
                         className={`${styles.h1Button} ${
@@ -318,7 +321,7 @@ function Home() {
                         onMouseLeave={() => setHovered(null)}
                       >
                         <Mail className={styles.h1Icon} />
-                        <p className={styles.h1ButtonText}>alanc16@uci.edu</p>
+                        <p className={styles.h1ButtonText}>{EMAIL}</p>
                       </div>
                     </a>
                     <div
@@ -372,7 +375,7 @@ function Home() {
           </div>
           <div className={styles.home2SplitRight}>
             <a
-              href="/resume-alan-chang-sp2023.pdf"
+              href={RESUME}
               alt="Download Alan Chang's resume"
               download
             >
@@ -419,6 +422,6 @@ function Home() {
       </motion.div>
     </motion.div>
   );
-}
+};
 
 export default Home;

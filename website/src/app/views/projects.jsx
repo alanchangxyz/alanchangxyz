@@ -5,7 +5,7 @@ const projects = {
     {
       name: "Amazon",
       // tech: ['TypeScript', 'Python/Pytest', 'AWS (Lambda, AppConfig, API Gateway, CloudFormation)'],
-      subhead: "SDE Intern - Summer 2022",
+      subhead: "SDE Intern - Summer 2022/2023",
       color: "#000000",
       // color: '#0baae3',
       description: (
@@ -18,11 +18,11 @@ const projects = {
     {
       name: "Commit the Change",
       // tech: ['React', 'Framer Motion'],
-      subhead: "Technical Director - Current",
+      subhead: "Technical Director - 2022/2023",
       color: "#6331d8",
       description: (
         <p>
-          Leading high-level technical planning and development implementation
+          Led high-level technical planning and development implementation
           for 5 large-scale software projects in partnership with Southern
           California NPOs to enhance and streamline their day-to-day operations.{" "}
         </p>
