@@ -98,10 +98,10 @@ const Home = () => {
                     change and social good. Currently building at{" "}
                     <a
                       className={styles.h1RL}
-                      href="https://ctc-uci.com"
-                      alt="Commit the Change"
+                      href="https://aws.com"
+                      alt="Amazon"
                     >
-                      Commit the Change
+                      Amazon
                     </a>{" "}
                     and{" "}
                     <a
@@ -253,10 +253,10 @@ const Home = () => {
                     change and social good. Currently building at{" "}
                     <a
                       className={styles.h1RL}
-                      href="https://ctc-uci.com"
-                      alt="Commit the Change"
+                      href="https://aws.com"
+                      alt="Amazon"
                     >
-                      Commit the Change
+                      Amazon
                     </a>{" "}
                     and{" "}
                     <a
