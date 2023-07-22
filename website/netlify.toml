@@ -6,7 +6,7 @@
   YARN_VERSION = "3.5.0"
 
 [[headers]]
-for = "/*"
-  [headers.values]
-    Cache-Control = '''
-    max-age=31536000'''
+  for = "/*"
+    [headers.values]
+      Cache-Control = '''
+      max-age=31536000'''
