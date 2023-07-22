@@ -14,7 +14,7 @@ import {
 } from "../../../util/animations";
 import projects from "../projects";
 
-import portrait from "../../../images/portrait-circle.png";
+import portrait from "../../../images/portrait-circle.webp";
 import styles from "./Home.module.css";
 
 const EMAIL = "alan@alanchang.xyz";
@@ -91,7 +91,7 @@ const Home = () => {
                   <motion.p
                     className={styles.h1BP}
                     variants={animationConfigs.transformY(-20, 20)}
-                    transition={transitionConfigs.spring(0.5, 1.3, 0.1)}
+                    transition={transitionConfigs.spring(0.9, 0.8, 0.1)}
                     {...animationStates.whileInView(true)}
                   >
                     Passionate about using tech to bring about exceptional
@@ -116,7 +116,7 @@ const Home = () => {
                   <motion.p
                     className={styles.h1BP}
                     variants={animationConfigs.transformY(-20, 20)}
-                    transition={transitionConfigs.spring(0.5, 1.3, 0.1)}
+                    transition={transitionConfigs.spring(0.9, 0.8, 0.1)}
                     {...animationStates.whileInView(true)}
                   >
                     My interests include DevOps, AI & ML, and trying the best
@@ -126,7 +126,7 @@ const Home = () => {
                   <motion.div
                     className={styles.home1BottomBoxButtons}
                     variants={animationConfigs.transformX(-20, 20)}
-                    transition={transitionConfigs.spring(0.4, 1.5, 0.1)}
+                    transition={transitionConfigs.spring(0.9, 0.8, 0.1)}
                     {...animationStates.whileInView(true)}
                   >
                     <a
@@ -212,6 +212,8 @@ const Home = () => {
               <motion.img
                 src={portrait}
                 className={styles.home1Portrait}
+                alt="Portrait"
+                fetchPriority="high"
                 {...animationStates.whileInView(false)}
                 variants={animationConfigs.transformY(-40, 0, -40)}
                 transition={transitionConfigs.spring(0.5, 0.1, 0.4)}
@@ -224,6 +226,8 @@ const Home = () => {
               <motion.img
                 src={portrait}
                 className={styles.home1Portrait}
+                alt="Portrait"
+                fetchPriority="high"
                 {...animationStates.whileInView(false)}
                 variants={animationConfigs.transformY(-40, 0, -40)}
                 transition={transitionConfigs.spring(0.5, 0.1, 0.4)}
@@ -359,7 +363,7 @@ const Home = () => {
       <motion.div
         className={styles.home2}
         variants={animationConfigs.opacity(0.2, 1)}
-        transition={transitionConfigs.spring(1, 0, 0.2)}
+        transition={transitionConfigs.spring(0.5, 0, 0.2)}
         {...animationStates.animate}
       >
         <div className={styles.home2SplitHeaders}>

@@ -25,7 +25,7 @@ const ProjectCard = ({
       <motion.p
         className={styles.projectCardText}
         variants={animationConfigs.opacity(0, 0)}
-        transition={transitionConfigs.simple(0.2, 0.8)}
+        transition={transitionConfigs.simple(0.5, 0.5)}
         {...animationStates.whileInView(true)}
       >
         {name}
@@ -33,7 +33,7 @@ const ProjectCard = ({
       <motion.p
         className={styles.projectCardSubhead}
         variants={animationConfigs.opacity(0, 0)}
-        transition={transitionConfigs.simple(0.2, 1)}
+        transition={transitionConfigs.simple(0.5, 0.6)}
         {...animationStates.whileInView(true)}
       >
         {subhead}
@@ -42,7 +42,7 @@ const ProjectCard = ({
     <motion.div
       className={styles.projectCardBody}
       variants={animationConfigs.opacity(0, 0)}
-      transition={transitionConfigs.simple(0.2, 1.4)}
+      transition={transitionConfigs.simple(0.7, 0.6)}
       {...animationStates.whileInView(true)}
     >
       {description}

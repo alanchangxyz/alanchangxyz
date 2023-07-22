@@ -4,19 +4,17 @@
       "es2020": true
     },
     "extends": [
-      "airbnb",
-      "plugin:react/recommended"
+      "airbnb"
     ],
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
       },
-      "ecmaVersion": 11,
+      "ecmaVersion": "latest",
       "sourceType": "module"
     },
     "plugins": [
-      "only-warn",
-      "react"
+      "only-warn"
     ],
     "rules": {
       "react/function-component-definition": "off",
