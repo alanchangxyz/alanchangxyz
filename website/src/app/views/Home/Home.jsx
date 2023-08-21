@@ -19,7 +19,7 @@ import styles from "./Home.module.css";
 
 const EMAIL = "alan@alanchang.xyz";
 const LINKEDIN = "https://linkedin.com/in/acxyz";
-const RESUME = "/resume-alan-chang-sm2023.pdf";
+const RESUME = "/resume-alan-chang-f2023.pdf";
 
 const Home = () => {
   const [hovered, setHovered] = useState(null);
