@@ -95,7 +95,8 @@ const Home = () => {
                     {...animationStates.whileInView(true)}
                   >
                     Passionate about using tech to bring about exceptional
-                    change and social good. Currently building at{" "}
+                    change and social good. Excited to tackle new challenges with
+                    previous experience in software design & development at {" "}
                     <a
                       className={styles.h1RL}
                       href="https://aws.com"
@@ -106,10 +107,10 @@ const Home = () => {
                     and{" "}
                     <a
                       className={styles.h1RL}
-                      href="https://hack.ics.uci.edu"
-                      alt="Hack at UCI"
+                      href="https://ctc-uci.com"
+                      alt="Commit the Change @ UCI"
                     >
-                      Hack at UCI
+                      Commit the Change
                     </a>
                     !
                   </motion.p>
@@ -254,7 +255,8 @@ const Home = () => {
                 <div className={styles.home1BottomBoxBody}>
                   <p className={styles.home1BottomBoxBodyP}>
                     Passionate about using tech to bring about exceptional
-                    change and social good. Currently building at{" "}
+                    change and social good. Excited to tackle new challenges with
+                    previous experience in software design & development at {" "}
                     <a
                       className={styles.h1RL}
                       href="https://aws.com"
@@ -265,10 +267,10 @@ const Home = () => {
                     and{" "}
                     <a
                       className={styles.h1RL}
-                      href="https://hack.ics.uci.edu"
-                      alt="Hack at UCI"
+                      href="https://ctc-uci.com"
+                      alt="Commit the Change @ UCI"
                     >
-                      Hack at UCI
+                      Commit the Change
                     </a>
                     !
                   </p>
