@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 
-import App from './App';
+import Home from './views/Home/Home';
 import Tab from './views/Tab/Tab';
 import Tabs from './views/Tabs/Tabs';
 
@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')!).render(
     <ThemeProvider {...{ theme }}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<Home />} />
           <Route path="/tabs" element={<Tabs />} />
           <Route path="/tabs/:id" element={<Tab />} />
         </Routes>

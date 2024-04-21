@@ -15,6 +15,8 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
+import { dayAbbrs } from '../../utils/date';
+
 const data = [
   {
     date: new Date(2024, 1, 18),
@@ -48,31 +50,6 @@ const data = [
   },
 ];
 
-const monthAbbrs: Record<number, String> = {
-  1: "jan",
-  2: "feb",
-  3: "mar",
-  4: "apr",
-  5: "may",
-  6: "jun",
-  7: "jul",
-  8: "aug",
-  9: "sep",
-  10: "oct",
-  11: "nov",
-  12: "dec"
-};
-
-const dayAbbrs: Record<number, String> = {
-  0: "sun",
-  1: "mon",
-  2: "tue",
-  3: "wed",
-  4: "thu",
-  5: "fri",
-  6: "sat"
-};
-
 const formatDate = (date: Date): JSX.Element => {
   const theme = useTheme();
   return (
@@ -86,10 +63,10 @@ const formatDate = (date: Date): JSX.Element => {
 const formatLocation = (venue: string, location: string): JSX.Element => {
   const theme = useTheme();
   return (
-    <>
+    <div style={{ textTransform: "lowercase" }}>
       <p style={{ fontSize: 18, fontWeight: 700, color: theme.palette.secondary.main }}>{venue}</p>
       <p style={{ fontSize: 14 }}>{location}</p>
-    </>
+    </div>
   );
 };
 
@@ -139,7 +116,7 @@ const Tabs = () => {
         </Typography>
       </Stack>
       <Stack direction="row" justifyContent="flex-end" sx={{ width: "100%" }}>
-        <Button disableElevation variant="contained" sx={{ width: "17.5%", margin: "5px 5px 12px 8px", backgroundColor: theme.palette.secondary.main }}>
+        <Button disableElevation variant="contained" color="secondary" sx={{ width: "17.5%", margin: "5px 5px 12px 8px" }}>
           New Tab
         </Button>
       </Stack>
