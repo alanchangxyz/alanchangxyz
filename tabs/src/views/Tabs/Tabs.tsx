@@ -1,5 +1,9 @@
 import {
+  Avatar,
+  AvatarGroup,
   Box,
+  Button,
+  Stack,
   Table,
   TableBody,
   TableCell,
@@ -7,8 +11,9 @@ import {
   TableHead,
   TablePagination,
   TableRow,
-  Toolbar
+  Typography,
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const data = [
   {
@@ -38,69 +43,116 @@ const data = [
 ];
 
 const monthAbbrs: Record<number, String> = {
-  1: "JAN",
-  2: "FEB",
-  3: "MAR",
-  4: "APR",
-  5: "MAY",
-  6: "JUN",
-  7: "JUL",
-  8: "AUG",
-  9: "SEP",
-  10: "OCT",
-  11: "NOV",
-  12: "DEC"
+  1: "jan",
+  2: "feb",
+  3: "mar",
+  4: "apr",
+  5: "may",
+  6: "jun",
+  7: "jul",
+  8: "aug",
+  9: "sep",
+  10: "oct",
+  11: "nov",
+  12: "dec"
 };
 
 const dayAbbrs: Record<number, String> = {
-  0: "SUN",
-  1: "MON",
-  2: "TUE",
-  3: "WED",
-  4: "THU",
-  5: "FRI",
-  6: "SAT"
+  0: "sun",
+  1: "mon",
+  2: "tue",
+  3: "wed",
+  4: "thu",
+  5: "fri",
+  6: "sat"
 };
 
-const formatDate = (date: Date): JSX.Element => (
-  <>
-    <p style={{ fontSize: 18, fontWeight: 700 }}>{dayAbbrs[date.getDay()]}</p>
-    {/* <p>{monthAbbrs[date.getMonth()]}</p> */}
-    <p style={{ fontSize: 14 }}>{date.getMonth() + 1}/{date.getDate()}</p>
-  </>
-);
-
-const formatLocation = (venue: string, location: string): JSX.Element => (
-  <>
-    <p style={{ fontSize: 18, fontWeight: 700 }}>{venue}</p>
-    <p style={{ fontSize: 14 }}>{location}</p>
-  </>
-);
-
-const formatTotal = (total: number): JSX.Element => (
-  <>
-    <span style={{ fontSize: 18, fontWeight: 700, color: "#222" }}>{Math.floor(total)}</span>
-    <span style={{ fontWeight: 600, color: "gray" }}>.{Math.round((total - Math.floor(total)) * 100)}</span>
-  </>
-);
-
-const Tabs = () => {
+const formatDate = (date: Date): JSX.Element => {
+  const theme = useTheme();
   return (
     <>
-      <p>Tabs</p>
+      <p style={{ fontSize: 18, fontWeight: 700, color: theme.palette.primary.main }}>{dayAbbrs[date.getDay()]}</p>
+      <p style={{ fontSize: 14, fontWeight: 400 }}>{date.getMonth() + 1}/{date.getDate()}/{date.getFullYear().toString().slice(2)}</p>
+    </>
+  );
+};
+
+const formatLocation = (venue: string, location: string): JSX.Element => {
+  const theme = useTheme();
+  return (
+    <>
+      <p style={{ fontSize: 18, fontWeight: 700, color: theme.palette.secondary.main }}>{venue}</p>
+      <p style={{ fontSize: 14 }}>{location}</p>
+    </>
+  );
+};
+
+const generateAvatars = (): JSX.Element => {
+  const avatars: string[] = [
+    'https://mui.com/static/images/avatar/1.jpg',
+    'https://mui.com/static/images/avatar/2.jpg',
+    'https://mui.com/static/images/avatar/3.jpg',
+    'https://mui.com/static/images/avatar/4.jpg'
+  ];
+  return (
+    <>
+      <AvatarGroup max={4}>
+        {Array(Math.floor(Math.random() * 6))
+          .fill(0)
+          .map((_) => (
+            <Avatar src={`${avatars[Math.floor(Math.random() * 4)]}`} />
+          )
+        )}
+      </AvatarGroup>
+    </>
+  );
+};
+
+const formatTotal = (total: number): JSX.Element => {
+  const theme = useTheme();
+  return (
+    <>
+      <span style={{ fontSize: 18, fontWeight: 700, color: theme.palette.primary.dark }}>{Math.floor(total)}</span>
+      <span style={{ fontWeight: 600, color: theme.palette.primary.dark }}>.{Math.round((total - Math.floor(total)) * 100)}</span>
+    </>
+  );
+};
+
+const Tabs = () => {
+  const theme = useTheme();
+  return (
+    <Box sx={{ width: '96%', paddingLeft: '1.5%' }}>
+      <Stack direction="row" justifyContent="flex-start" sx={{ width: "100%" }}>
+        <Typography sx={{
+          fontSize: 36,
+          fontWeight: 800,
+          color: theme.palette.primary.main,
+          margin: "15px 0 -10px 14px"
+        }}>
+          tabs
+        </Typography>
+      </Stack>
+      <Stack direction="row" justifyContent="flex-end" sx={{ width: "100%" }}>
+        <Button disableElevation variant="contained" sx={{ width: "17.5%", margin: "5px 5px 12px 8px", backgroundColor: theme.palette.secondary.main }}>
+          New Tab
+        </Button>
+      </Stack>
       <TableContainer>
         <Table aria-labelledby="tableTitle">
-          <Box sx={{ width: '100%' }}>
-            <Toolbar sx={{ pl: { sm: 2 }, pr: { xs: 1, sm: 1 }}}>
-
-            </Toolbar>
-
-          </Box>
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">date</TableCell>
+              <TableCell align="left" />
+              <TableCell align="right" sx={{ paddingRight: 3 }}>with</TableCell>
+              <TableCell align="right" sx={{ paddingRight: 2.5 }}>total</TableCell>
+            </TableRow>
+          </TableHead>
           <TableBody>
             {data.map((entry) => (
               <TableRow>
                 <TableCell align="left">{formatDate(entry.date)}</TableCell>
                 <TableCell align="left">{formatLocation(entry.title, entry.location)}</TableCell>
+                <TableCell align="left" sx={{ width: 1/2 }}>{generateAvatars()}</TableCell>
                 <TableCell align="right">{formatTotal(entry.total)}</TableCell>
               </TableRow>
             ))}
@@ -115,7 +167,7 @@ const Tabs = () => {
           onPageChange={() => null}
         />
       </TableContainer>
-    </>
+    </Box>
   );
 };
 
