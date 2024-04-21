@@ -40,6 +40,12 @@ const data = [
     location: "Garden Grove, CA",
     total: 16.93
   },
+  {
+    date: new Date(2024, 0, 5),
+    title: "Seaside Donuts & Bakery",
+    location: "Newport Beach, CA",
+    total: 1.25
+  },
 ];
 
 const monthAbbrs: Record<number, String> = {
