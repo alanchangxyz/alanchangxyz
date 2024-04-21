@@ -110,7 +110,7 @@ const Tabs = () => {
           fontSize: 36,
           fontWeight: 800,
           color: theme.palette.primary.main,
-          margin: "15px 0 -10px 14px"
+          margin: "35px 0 -10px 14px"
         }}>
           tabs
         </Typography>
