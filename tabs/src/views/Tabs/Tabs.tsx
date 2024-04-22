@@ -13,7 +13,6 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 import { dayAbbrs } from '../../utils/date';
 
@@ -56,22 +55,43 @@ const data = [
 ];
 
 const formatDate = (date: Date): JSX.Element => {
-  const theme = useTheme();
   return (
-    <>
-      <p style={{ fontSize: 18, fontWeight: 700, color: theme.palette.primary.main }}>{dayAbbrs[date.getDay()]}</p>
-      <p style={{ fontSize: 14, fontWeight: 400 }}>{date.getMonth() + 1}/{date.getDate()}/{date.getFullYear().toString().slice(2)}</p>
-    </>
+    <Box textTransform="lowercase">
+      <Typography
+        fontSize={{ md: "1.08rem", xl: "1.17rem" }}
+        fontWeight={700}
+        color="primary.main"
+      >
+        {dayAbbrs[date.getDay()]}
+      </Typography>
+      <Typography
+        fontSize={{ md: "0.9rem", xl: "0.94rem" }}
+        fontWeight={400}
+      >
+        {date.getMonth() + 1}/{date.getDate()}/{date.getFullYear().toString().slice(2)}
+      </Typography>
+    </Box>
   );
 };
 
 const formatLocation = (venue: string, location: string): JSX.Element => {
-  const theme = useTheme();
   return (
-    <div style={{ textTransform: "lowercase" }}>
-      <p style={{ fontSize: 18, fontWeight: 700, color: theme.palette.secondary.main }}>{venue}</p>
-      <p style={{ fontSize: 14 }}>{location}</p>
-    </div>
+    <Box textTransform="lowercase">
+      <Typography
+        fontSize={{ md: "1.08rem", xl: "1.17rem" }}
+        fontWeight={700}
+        marginBottom="-2px"
+        color="secondary.main"
+      >
+        {venue}
+      </Typography>
+      <Typography
+        display="inline"
+        fontSize={{ md: "0.92rem", xl: "0.96rem" }}
+      >
+        {location}
+      </Typography>
+    </Box>
   );
 };
 
@@ -97,31 +117,49 @@ const generateAvatars = (): JSX.Element => {
 };
 
 const formatTotal = (total: number): JSX.Element => {
-  const theme = useTheme();
   return (
     <>
-      <span style={{ fontSize: 18, fontWeight: 700, color: theme.palette.primary.dark }}>{Math.floor(total)}</span>
-      <span style={{ fontWeight: 600, color: theme.palette.primary.dark }}>.{Math.round((total - Math.floor(total)) * 100)}</span>
+      <Typography
+        display="inline"
+        color="primary.dark"
+        fontSize={{ md: "1.08rem", xl: "1.17rem" }}
+        fontWeight={700}
+      >
+        {Math.floor(total)}
+      </Typography>
+      <Typography
+        display="inline"
+        color="primary.dark"
+        fontSize={{ md: "0.96rem", xl: "1.04rem" }}
+        fontWeight={600}
+      >
+        .{Math.round((total - Math.floor(total)) * 100)}
+      </Typography>
     </>
   );
 };
 
 const Tabs = () => {
-  const theme = useTheme();
   return (
-    <Box sx={{ width: '96%', paddingLeft: '1.5%' }}>
-      <Stack direction="row" justifyContent="flex-start" sx={{ width: "100%" }}>
-        <Typography sx={{
-          fontSize: 36,
-          fontWeight: 800,
-          color: theme.palette.primary.main,
-          margin: "35px 0 -10px 14px"
-        }}>
-          tabs
+    <Box sx={{ width: '94%', paddingLeft: '3%' }}>
+      <Stack direction="row" justifyContent="flex-start" sx={{ marginTop: "35px", marginLeft: "12px" }}>
+        <Typography variant="h1" color="primary.main" textTransform="lowercase">
+          Tabs
         </Typography>
       </Stack>
-      <Stack direction="row" justifyContent="flex-end" sx={{ width: "100%" }}>
-        <Button disableElevation variant="contained" color="secondary" sx={{ width: "17.5%", margin: "5px 5px 12px 8px" }}>
+      <Stack direction="row" justifyContent="flex-end">
+        <Button
+          disableElevation
+          variant="contained"
+          color="secondary"
+          sx={{
+            fontSize: "1rem",
+            fontWeight: 600,
+            width: "160px",
+            margin: "8px 0px 1.5rem 8px",
+            padding: "8px"
+          }}
+        >
           New Tab
         </Button>
       </Stack>
@@ -129,10 +167,10 @@ const Tabs = () => {
         <Table aria-labelledby="tableTitle">
           <TableHead>
             <TableRow>
-              <TableCell align="left">date</TableCell>
+              <TableCell align="left" sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }}>date</TableCell>
               <TableCell align="left" />
-              <TableCell align="right" sx={{ paddingRight: 3 }}>with</TableCell>
-              <TableCell align="right" sx={{ paddingRight: 2.5 }}>total</TableCell>
+              <TableCell align="right" sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, paddingRight: 2.5 }}>with</TableCell>
+              <TableCell align="right" sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, paddingRight: 2.5 }}>total</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
