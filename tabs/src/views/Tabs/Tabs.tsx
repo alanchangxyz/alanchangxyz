@@ -60,6 +60,7 @@ const formatDate = (date: Date): JSX.Element => {
       <Typography
         fontSize={{ md: "1.08rem", xl: "1.17rem" }}
         fontWeight={700}
+        marginBottom="-2px"
         color="primary.main"
       >
         {dayAbbrs[date.getDay()]}
