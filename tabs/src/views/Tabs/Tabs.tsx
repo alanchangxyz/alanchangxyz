@@ -19,30 +19,35 @@ import { dayAbbrs } from '../../utils/date';
 
 const data = [
   {
+    id: "a",
     date: new Date(2024, 1, 18),
     title: "Meiji Seimen",
     location: "Costa Mesa, CA",
     total: 65.67
   },
   {
+    id: "b",
     date: new Date(2024, 1, 17),
     title: "Hako",
     location: "Irvine, CA",
     total: 34.19
   },
   {
+    id: "c",
     date: new Date(2024, 0, 24),
     title: "SongHak BBQ",
     location: "Tustin, CA",
     total: 171.82
   },
   {
+    id: "d",
     date: new Date(2024, 0, 8),
     title: "Carrot & Daikon",
     location: "Garden Grove, CA",
     total: 16.93
   },
   {
+    id: "e",
     date: new Date(2024, 0, 5),
     title: "Seaside Donuts & Bakery",
     location: "Newport Beach, CA",

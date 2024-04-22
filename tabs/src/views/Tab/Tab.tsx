@@ -100,16 +100,16 @@ const Tab = () => {
                 <TableCell>subtotal</TableCell>
                 <TableCell align="right">43.71</TableCell>
               </TableRow>
-              <TableRow sx={{ "& td": { border: 0, paddingBottom: 0 } }}>
+              <TableRow sx={{ "& td": { border: 0, paddingTop: "6px", paddingBottom: 0 } }}>
                 <TableCell>westminster, ca (7.75%)</TableCell>
-                <TableCell align="right">12.89</TableCell>
-              </TableRow>
-              <TableRow sx={{ "& td": { border: 0, paddingBottom: 0 } }}>
-                <TableCell>tip (15%)</TableCell>
                 <TableCell align="right">6.35</TableCell>
               </TableRow>
-              <TableRow sx={{ "& td": { fontWeight: 700 }}}>
-                <TableCell>total</TableCell>
+              <TableRow sx={{ "& td": { border: 0, paddingTop: "6px", paddingBottom: 0 } }}>
+                <TableCell>tip (15%)</TableCell>
+                <TableCell align="right">12.89</TableCell>
+              </TableRow>
+              <TableRow sx={{ "& td": { paddingTop: "12px", fontWeight: 700 }}}>
+                <TableCell sx={{ color: theme.palette.primary.main }}>total</TableCell>
                 <TableCell align="right">62.90</TableCell>
               </TableRow>
             </TableBody>
