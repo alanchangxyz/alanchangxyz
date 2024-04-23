@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import {
   Avatar,
   AvatarGroup,
@@ -54,7 +55,7 @@ const data = [
   },
 ];
 
-const formatDate = (date: Date): JSX.Element => {
+const formatDate = (date: Date): ReactElement => {
   return (
     <Box textTransform="lowercase">
       <Typography
@@ -75,7 +76,7 @@ const formatDate = (date: Date): JSX.Element => {
   );
 };
 
-const formatLocation = (venue: string, location: string): JSX.Element => {
+const formatLocation = (venue: string, location: string): ReactElement => {
   return (
     <Box textTransform="lowercase">
       <Typography
@@ -96,7 +97,7 @@ const formatLocation = (venue: string, location: string): JSX.Element => {
   );
 };
 
-const generateAvatars = (): JSX.Element => {
+const generateAvatars = (): ReactElement => {
   const avatars: string[] = [
     'https://mui.com/static/images/avatar/1.jpg',
     'https://mui.com/static/images/avatar/2.jpg',
@@ -108,8 +109,8 @@ const generateAvatars = (): JSX.Element => {
       <AvatarGroup max={4}>
         {Array(Math.floor(Math.random() * 6))
           .fill(0)
-          .map((_) => (
-            <Avatar src={`${avatars[Math.floor(Math.random() * 4)]}`} />
+          .map((_, index) => (
+            <Avatar key={`avatar_${index}`} src={`${avatars[Math.floor(Math.random() * 4)]}`} />
           )
         )}
       </AvatarGroup>
@@ -117,7 +118,7 @@ const generateAvatars = (): JSX.Element => {
   );
 };
 
-const formatTotal = (total: number): JSX.Element => {
+const formatTotal = (total: number): ReactElement => {
   return (
     <>
       <Typography
@@ -176,7 +177,7 @@ const Tabs = () => {
           </TableHead>
           <TableBody>
             {data.map((entry) => (
-              <TableRow>
+              <TableRow key={entry.id}>
                 <TableCell align="left">{formatDate(entry.date)}</TableCell>
                 <TableCell align="left">{formatLocation(entry.title, entry.location)}</TableCell>
                 <TableCell align="left" sx={{ width: 1/2 }}>{generateAvatars()}</TableCell>
