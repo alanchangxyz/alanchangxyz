@@ -7,11 +7,11 @@ interface AuthSnackbarProps {
   setVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-interface LoggedInSuccessSnackbarProps extends AuthSnackbarProps {
+interface AuthSnackbarWithEmailProps extends AuthSnackbarProps {
   email: string;
 }
 
-export const LoggedInSuccessSnackbar = ({ email, visible, setVisible }: LoggedInSuccessSnackbarProps) => {
+export const LoggedInSuccessSnackbar = ({ email, visible, setVisible }: AuthSnackbarWithEmailProps) => {
   return (
     <Snackbar
       anchorOrigin={{ vertical: "top", horizontal: "center" }}
@@ -74,7 +74,7 @@ export const LoginRequiredSnackbar = ({ visible, setVisible }: AuthSnackbarProps
   );
 };
 
-export const AllowlistDenySnackbar = ({ visible, setVisible }: AuthSnackbarProps) => {
+export const AllowlistDenySnackbar = ({ email, visible, setVisible }: AuthSnackbarWithEmailProps) => {
   return (
     <Snackbar
       anchorOrigin={{ vertical: "top", horizontal: "center" }}
@@ -89,7 +89,7 @@ export const AllowlistDenySnackbar = ({ visible, setVisible }: AuthSnackbarProps
         severity="error"
         variant="filled"
       >
-        this email is not allowlisted
+        {email} is not an allowlisted email
       </Alert>
     </Snackbar>
   );

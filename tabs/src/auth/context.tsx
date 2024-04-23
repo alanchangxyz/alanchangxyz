@@ -55,8 +55,9 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(true);
   const [showLoggedInAlert, setShowLoggedInAlert] = useState(false);
   const [showLoggedOutAlert, setShowLoggedOutAlert] = useState(false);
-  const [showAllowlistAlert, setShowAllowlistAlert] = useState(false);
   const [showLoginRequiredAlert, setShowLoginRequiredAlert] = useState(false);
+  const [showAllowlistAlert, setShowAllowlistAlert] = useState(false);
+  const [denylistedEmail, setDenylistedEmail] = useState('');
   const [currentUser, setCurrentUser] = useState(null as User | null);
   const isLoggedIn = currentUser !== null;
 
@@ -87,6 +88,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     onAuthStateChanged(auth, async user => {
       // maintaining allowlist
       if (user && !allowlist.includes(user.email ?? "")) {
+        setDenylistedEmail(user.email ?? "this email");
         await deleteUser(user);
         user = null;
         await setShowAllowlistAlert(true);
@@ -124,6 +126,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         setVisible={setShowLoggedOutAlert}
       />
       <AllowlistDenySnackbar
+        email={denylistedEmail}
         visible={showAllowlistAlert}
         setVisible={setShowAllowlistAlert}
       />
