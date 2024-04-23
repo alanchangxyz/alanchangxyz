@@ -3,16 +3,18 @@ import {
   useContext,
   useEffect,
   useState,
-  ReactElement
+  ReactElement,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   deleteUser,
   getAuth,
+  getRedirectResult,
   onAuthStateChanged,
   signInWithRedirect,
   GoogleAuthProvider,
-  User
+  User,
+  UserCredential,
 } from 'firebase/auth';
 
 import { AllowlistDenySnackbar, LoggedInSuccessSnackbar, LoggedOutSuccessSnackbar } from './snackbars';
@@ -26,6 +28,8 @@ interface AuthProviderProps {
 interface AuthProvider {
   currentUser: User | null;
   isLoggedIn: boolean;
+  getLoginRedirectStatus: () => Promise<UserCredential | null>;
+  setShowLoggedInAlert: (_: boolean) => void;
   login: () => void;
   logout: () => void;
 }
@@ -33,6 +37,8 @@ interface AuthProvider {
 const AuthContext = createContext({
   currentUser: null,
   isLoggedIn: false,
+  getLoginRedirectStatus: () => {},
+  setShowLoggedInAlert: (_: boolean) => {},
   login: () => {},
   logout: () => {},
 } as AuthProvider);
@@ -64,6 +70,10 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     await setShowLoggedOutAlert(true);
     navigate('/');
   };
+  const getLoginRedirectStatus = async (): Promise<UserCredential | null> => {
+    const result = await getRedirectResult(auth);
+    return result;
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, async user => {
@@ -74,8 +84,10 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         await setShowAllowlistAlert(true);
       }
       // log in & persist
+      // if (!currentUser && user) {
+      //   await setShowLoggedInAlert(true);
+      // }
       await setCurrentUser(user);
-      await setShowLoggedInAlert(true);
       setLoading(false);
     });
   }, []);
@@ -85,6 +97,8 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       value={{
         currentUser,
         isLoggedIn,
+        getLoginRedirectStatus,
+        setShowLoggedInAlert,
         login,
         logout,
       }}
