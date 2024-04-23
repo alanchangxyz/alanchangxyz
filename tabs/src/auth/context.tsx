@@ -17,7 +17,12 @@ import {
   UserCredential,
 } from 'firebase/auth';
 
-import { AllowlistDenySnackbar, LoggedInSuccessSnackbar, LoggedOutSuccessSnackbar } from './snackbars';
+import {
+  AllowlistDenySnackbar,
+  LoggedInSuccessSnackbar,
+  LoggedOutSuccessSnackbar,
+  LoginRequiredSnackbar,
+} from './snackbars';
 import { app } from './firebase';
 import allowlist from './allowlist';
 
@@ -30,6 +35,7 @@ interface AuthProvider {
   isLoggedIn: boolean;
   getLoginRedirectStatus: () => Promise<UserCredential | null>;
   setShowLoggedInAlert: (_: boolean) => void;
+  setShowLoginRequiredAlert: (_: boolean) => void;
   login: () => void;
   logout: () => void;
 }
@@ -39,6 +45,7 @@ const AuthContext = createContext({
   isLoggedIn: false,
   getLoginRedirectStatus: () => {},
   setShowLoggedInAlert: (_: boolean) => {},
+  setShowLoginRequiredAlert: (_: boolean) => {},
   login: () => {},
   logout: () => {},
 } as AuthProvider);
@@ -49,6 +56,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   const [showLoggedInAlert, setShowLoggedInAlert] = useState(false);
   const [showLoggedOutAlert, setShowLoggedOutAlert] = useState(false);
   const [showAllowlistAlert, setShowAllowlistAlert] = useState(false);
+  const [showLoginRequiredAlert, setShowLoginRequiredAlert] = useState(false);
   const [currentUser, setCurrentUser] = useState(null as User | null);
   const isLoggedIn = currentUser !== null;
 
@@ -99,6 +107,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         isLoggedIn,
         getLoginRedirectStatus,
         setShowLoggedInAlert,
+        setShowLoginRequiredAlert,
         login,
         logout,
       }}
@@ -117,6 +126,10 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       <AllowlistDenySnackbar
         visible={showAllowlistAlert}
         setVisible={setShowAllowlistAlert}
+      />
+      <LoginRequiredSnackbar
+        visible={showLoginRequiredAlert}
+        setVisible={setShowLoginRequiredAlert}
       />
       {!loading && children}
     </AuthContext.Provider>

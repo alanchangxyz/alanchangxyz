@@ -1,6 +1,5 @@
 import { redirect, useParams, Link as RouterLink } from "react-router-dom";
 import {
-  Avatar,
   Box,
   Button,
   Divider,
@@ -10,11 +9,13 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
   Typography,
 } from '@mui/material';
+import { ContentCopy } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
+
+import { useAuth } from '../../auth/context';
 
 import { months } from '../../utils/date';
 const data = [
@@ -51,6 +52,7 @@ const data = [
 ];
 
 const Tab = () => {
+  const { isLoggedIn } = useAuth();
   const theme = useTheme();
   const tab = data[Math.floor(Math.random() * data.length)];
 
@@ -61,19 +63,29 @@ const Tab = () => {
 
   return (
     <Box sx={{ width: '94%', paddingLeft: '3%' }}>
-      <Stack direction="row" justifyContent="flex-start" sx={{ marginTop: "1%", marginBottom: "0.2%" }}>
-        <Link component={RouterLink} to="/tabs" underline="none">
-          <Typography
-            color="gray.main"
-            fontSize={18}
-            fontWeight={800}
-            marginTop="24px"
-          >
-            &lt; back to all tabs
-          </Typography>
-        </Link>
-      </Stack>
-      <Stack direction="row" justifyContent="flex-start">
+      {isLoggedIn && (
+        <Stack
+          direction="row"
+          justifyContent="flex-start"
+          sx={{ marginTop: "1%", marginBottom: "0.2%" }}
+        >
+          <Link component={RouterLink} to="/tabs" underline="none">
+            <Typography
+              color="gray.main"
+              fontSize={18}
+              fontWeight={800}
+              marginTop="24px"
+            >
+              &lt; back to all tabs
+            </Typography>
+          </Link>
+        </Stack>
+      )}
+      <Stack
+        direction="row"
+        justifyContent="flex-start"
+        sx={{ marginTop: isLoggedIn ? 0 : "1.2%" }}
+      >
         <Typography
           variant="h1"
           color="primary.main"
@@ -81,6 +93,30 @@ const Tab = () => {
         >
           {tab.title}
         </Typography>
+        <Button
+          variant="text"
+          aria-label="copy"
+          endIcon={(
+            <ContentCopy sx={{
+              color: "gray.main",
+              width: "1.05rem",
+            }} />
+          )}
+          sx={{
+            marginTop: "1.2rem",
+            marginLeft: "0.5rem",
+            paddingLeft: "0.7rem",
+            paddingRight: "0.7rem",
+            paddingTop: "0.2rem",
+            paddingBottom: 0,
+            userSelect: "unset",
+          }}
+          onClick={() => navigator.clipboard.writeText(id!)}
+        >
+          <Typography variant="h6" color="gray.main" paddingLeft="-0.1rem">
+            {id}
+          </Typography>
+        </Button>
       </Stack>
       <Stack direction="row" justifyContent="flex-start" sx={{ height: "30px", marginBottom: "0.2%" }}>
         <Typography

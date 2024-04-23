@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 
+import ProtectedRoute from './auth/ProtectedRoute';
 import { AuthProvider } from './auth/context';
 
 import Home from './views/Home/Home';
@@ -19,7 +20,11 @@ createRoot(document.getElementById('root')!).render(
           <AuthProvider>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/tabs" element={<Tabs />} />
+              <Route path="/tabs" element={(
+                <ProtectedRoute redirect="/">
+                  <Tabs />
+                </ProtectedRoute>
+              )} />
               <Route path="/tabs/:id" element={<Tab />} />
             </Routes>
           </AuthProvider>

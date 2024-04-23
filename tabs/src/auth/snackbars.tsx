@@ -18,7 +18,7 @@ export const LoggedInSuccessSnackbar = ({ email, visible, setVisible }: LoggedIn
       open={visible}
       autoHideDuration={5000}
       onClose={() => setVisible(false)}
-      key="auth-logged-in-success"
+      key="auth-logged-in-success-alert"
     >
       <Alert
         icon={<Check />}
@@ -39,7 +39,7 @@ export const LoggedOutSuccessSnackbar = ({ visible, setVisible }: AuthSnackbarPr
       open={visible}
       autoHideDuration={5000}
       onClose={() => setVisible(false)}
-      key="auth-logged-in-success"
+      key="auth-logged-out-success-alert"
     >
       <Alert
         icon={<Check />}
@@ -53,6 +53,27 @@ export const LoggedOutSuccessSnackbar = ({ visible, setVisible }: AuthSnackbarPr
   );
 };
 
+export const LoginRequiredSnackbar = ({ visible, setVisible }: AuthSnackbarProps) => {
+  return (
+    <Snackbar
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      open={visible}
+      autoHideDuration={5000}
+      onClose={() => setVisible(false)}
+      key="auth-login-required-alert"
+    >
+      <Alert
+        icon={<Block />}
+        onClose={() => setVisible(false)}
+        severity="error"
+        variant="filled"
+      >
+        you must be logged in to view this page
+      </Alert>
+    </Snackbar>
+  );
+};
+
 export const AllowlistDenySnackbar = ({ visible, setVisible }: AuthSnackbarProps) => {
   return (
     <Snackbar
@@ -60,7 +81,7 @@ export const AllowlistDenySnackbar = ({ visible, setVisible }: AuthSnackbarProps
       open={visible}
       autoHideDuration={5000}
       onClose={() => setVisible(false)}
-      key="auth-allowlist-alert-deny"
+      key="auth-allowlist-deny-alert"
     >
       <Alert
         icon={<Block />}
