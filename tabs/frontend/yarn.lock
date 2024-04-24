@@ -4247,9 +4247,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tabs@workspace:.":
+"tabs-frontend@workspace:.":
   version: 0.0.0-use.local
-  resolution: "tabs@workspace:."
+  resolution: "tabs-frontend@workspace:."
   dependencies:
     "@emotion/react": "npm:^11.11.4"
     "@emotion/styled": "npm:^11.11.5"

@@ -2,6 +2,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 
+import yelp from './services/yelp.js';
+
 dotenv.config();
 const PORT = process.env.PORT || 3001;
 
@@ -22,6 +24,12 @@ app.get('/', async (req, res) => {
   } catch (e) {
     return res.status(500).send(`/ - ${e.status} - ${e.message}`);
   }
+});
+
+app.get('/yelp', async (req, res) => {
+  const { term, location } = req.query;
+  const result = await yelp().searchByTermAndLocation(term, location);
+  return res.status(200).json(result.data);
 });
 
 app.listen(PORT, () => {
