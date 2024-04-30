@@ -2,6 +2,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 
+import tabsRouter from './routes/tabs.js';
+import usersRouter from './routes/users.js';
+
 import yelp from './services/yelp.js';
 
 dotenv.config();
@@ -16,6 +19,9 @@ app.use(
   }),
 );
 app.use(express.json());
+
+app.use('/tabs', tabsRouter);
+app.use('/users', usersRouter);
 
 // sanity check
 app.get('/', async (req, res) => {
