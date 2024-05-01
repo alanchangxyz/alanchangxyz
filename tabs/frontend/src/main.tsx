@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -12,6 +12,7 @@ import Tabs from './views/Tabs/Tabs';
 
 import theme from './theme';
 import './index.css';
+import VenmoRedirect from './components/VenmoRedirect';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -26,6 +27,9 @@ createRoot(document.getElementById('root')!).render(
                 </ProtectedRoute>
               )} />
               <Route path="/tabs/:id" element={<Tab />} />
+              <Route path="/venmo/:venmo" element={<VenmoRedirect />} />
+              {/* <Route path="/venmotest" element={<Navigate to="/venmo/alanchangxyz" state={{ amount: 20.71, mode: "pay" }} />} /> */}
+              <Route path="/*" element={<Navigate to="/tabs" />} />
             </Routes>
           </AuthProvider>
         </BrowserRouter>
