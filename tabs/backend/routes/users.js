@@ -1,4 +1,5 @@
 import express from 'express';
+import mdb from '../services/mongodb.js';
 
 const router = express.Router();
 
@@ -16,22 +17,34 @@ const router = express.Router();
 // }
 
 router.route('/')
-  .get((req, res) => {
-
+  .get(async (req, res) => {
+    const result = await mdb.db("db").collection("users").find();
+    return res.status(200).json(result);
   })
-  .post((req, res) => {
-
+  .post(async (req, res) => {
+    const result = await mdb.db("db").collection("users").insertOne({
+      id: req.body.id,
+      username: req.body.username,
+      email: req.body.email,
+      services: {
+        venmo: req.body.venmo,
+        zelle: req.body.zelle,
+      }
+    });
+    return res.status(200).json({ id: result.insertedId });
   });
 
 router.route('/:id')
-  .get((req, res) => {
+  .get(async (req, res) => {
+    const result = await mdb.db("db").collection("users").findOne({ id });
+    return res.status(200).json(result);
+  })
+  .put(async (req, res) => {
 
   })
-  .put((req, res) => {
-
-  })
-  .delete((req, res) => {
-
+  .delete(async (req, res) => {
+    const result = await mdb.db("db").collection("users").deleteOne({ id });
+    return res.status(200).json({ deleted: result.deletedCount });
   });
 
 export default router;
