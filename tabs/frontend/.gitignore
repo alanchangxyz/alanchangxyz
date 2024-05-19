@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Yarn 3
+# Yarn 4
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -31,3 +31,7 @@ dist-ssr
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# dotenv environment variables file
+.env
+.env.test
