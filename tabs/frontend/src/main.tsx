@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 
 import ProtectedRoute from './auth/ProtectedRoute';
-import VenmoRedirect from './components/VenmoRedirect';
+import { VenmoRedirect } from './components';
 import { AuthProvider } from './auth/context';
 
 import Home from './views/Home/Home';
