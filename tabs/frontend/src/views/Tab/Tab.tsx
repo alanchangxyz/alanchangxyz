@@ -88,96 +88,162 @@ const Tab = () => {
         )}
         <Stack
           direction="row"
-          justifyContent="flex-start"
-          sx={{ marginTop: isLoggedIn ? 0 : "1.2%" }}
+          justifyContent="space-around"
         >
-          <Typography
-            variant="h1"
-            color="primary.main"
-            textTransform="lowercase"
-          >
-            {tab.title}
-          </Typography>
-          <Button
-            variant="text"
-            aria-label="copy"
-            endIcon={(
-              <ContentCopy sx={{
-                color: "gray.main",
-                width: "1.05rem",
-                paddingTop: "0.05rem",
-                paddingLeft: "0.05rem",
-                paddingRight: "0.2rem",
-              }} />
-            )}
-            sx={{
-              marginTop: "1.2rem",
-              marginLeft: "0.6rem",
-              paddingLeft: "0.7rem",
-              paddingRight: "0.7rem",
-              paddingTop: "0.4rem",
-              paddingBottom: 0,
-              userSelect: "unset",
-            }}
-            onClick={() => {
-              navigator.clipboard.writeText(id!);
-              setCopySnackbarVisible(true);
-            }}
-          >
-            <Typography variant="h6" color="gray.main" paddingLeft="-0.1rem">
-              {id}
-            </Typography>
-          </Button>
-        </Stack>
-        <Stack direction="row" justifyContent="flex-start" sx={{ height: "30px", marginBottom: "0.2%" }}>
-          <Typography
-            variant="h6"
-            fontWeight={500}
-            color="secondary.main"
-            textTransform="lowercase"
-          >
-            {tab.location.city}, {tab.location.secondary}
-          </Typography>
-          <Divider orientation="vertical" flexItem variant="middle" sx={{ marginLeft: "12px", marginRight: "14px", marginBottom: "6px" }} />
-          <Typography
-            variant="h6"
-            color="gray.dark"
-            textTransform="lowercase"
-          >
-            {months[tab.date.getMonth() + 1]} {tab.date.getDate()}, {tab.date.getFullYear()}
-          </Typography>
-        </Stack>
-        <Stack direction="row" justifyContent="space-between" sx={{ marginTop: "0.1%" }}>
-          <TableContainer>
-            <Table aria-labelledby="tableTitle">
-              <TableBody sx={{ "& td": { border: 0, paddingLeft: 0, textTransform: "lowercase" } }}>
-                <TableRow>
-                  <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>salmon</TableCell>
-                  <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">12.89</TableCell>
-                </TableRow>
-                <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
-                  <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' }, textTransform: 'lowercase' }}>spinach</TableCell>
-                  <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">210.21</TableCell>
-                </TableRow>
-                <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
-                  <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>steak</TableCell>
-                  <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">35.74</TableCell>
-                </TableRow>
-                <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
-                  <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>strawberries</TableCell>
-                  <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">86.53</TableCell>
-                </TableRow>
-                <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
-                  <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>scrambled eggs</TableCell>
-                  <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">77.62</TableCell>
-                </TableRow>
-                <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
-                  <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>squash</TableCell>
-                  <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">9.03</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </TableContainer>
+          <Stack direction="column">
+            <Stack
+              direction="row"
+              justifyContent="flex-start"
+              sx={{ marginTop: isLoggedIn ? 0 : "1.2%" }}
+            >
+              <Typography
+                variant="h1"
+                color="primary.main"
+                textTransform="lowercase"
+              >
+                {tab.title}
+              </Typography>
+              <Button
+                variant="text"
+                aria-label="copy"
+                endIcon={(
+                  <ContentCopy sx={{
+                    color: "gray.main",
+                    width: "1.05rem",
+                    paddingTop: "0.05rem",
+                    paddingLeft: "0.05rem",
+                    paddingRight: "0.2rem",
+                  }} />
+                )}
+                sx={{
+                  marginTop: "1.2rem",
+                  marginLeft: "0.6rem",
+                  paddingLeft: "0.7rem",
+                  paddingRight: "0.7rem",
+                  paddingTop: "0.4rem",
+                  paddingBottom: 0,
+                  userSelect: "unset",
+                }}
+                onClick={() => {
+                  navigator.clipboard.writeText(id!);
+                  setCopySnackbarVisible(true);
+                }}
+              >
+                <Typography variant="h6" color="gray.main" paddingLeft="-0.1rem">
+                  {id}
+                </Typography>
+              </Button>
+            </Stack>
+            <Stack direction="row" justifyContent="flex-start" sx={{ height: "30px", marginBottom: "0.2%" }}>
+              <Typography
+                variant="h6"
+                fontWeight={500}
+                color="secondary.main"
+                textTransform="lowercase"
+              >
+                {tab.location.city}, {tab.location.secondary}
+              </Typography>
+              <Divider orientation="vertical" flexItem variant="middle" sx={{ marginLeft: "12px", marginRight: "14px", marginBottom: "6px" }} />
+              <Typography
+                variant="h6"
+                color="gray.dark"
+                textTransform="lowercase"
+              >
+                {months[tab.date.getMonth() + 1]} {tab.date.getDate()}, {tab.date.getFullYear()}
+              </Typography>
+            </Stack>
+            <Stack direction="row" justifyContent="space-between" sx={{ marginTop: "0.1%" }}>
+              <TableContainer>
+                <Table aria-labelledby="tableTitle">
+                  <TableBody sx={{ "& td": { border: 0, paddingLeft: 0, textTransform: "lowercase" } }}>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>salmon</TableCell>
+                      <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">12.89</TableCell>
+                    </TableRow>
+                    <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                      <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' }, textTransform: 'lowercase' }}>spinach</TableCell>
+                      <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">210.21</TableCell>
+                    </TableRow>
+                    <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                      <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>steak</TableCell>
+                      <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">35.74</TableCell>
+                    </TableRow>
+                    <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                      <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>strawberries</TableCell>
+                      <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">86.53</TableCell>
+                    </TableRow>
+                    <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                      <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>scrambled eggs</TableCell>
+                      <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">77.62</TableCell>
+                    </TableRow>
+                    <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                      <TableCell sx={{ fontWeight: 500, fontSize: { md: '1.05rem', xl: '1.2rem' } }}>squash</TableCell>
+                      <TableCell sx={{ fontSize: { md: '1.05rem', xl: '1.2rem' } }} align="right">9.03</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+              {/* <Box width={{ sm: "30px", md: "60px", xl: "5%" }} />
+              <Stack direction="column" width={{ sm: "300px", md: "500px", xl: "40%" }}>
+                <TableContainer>
+                  <Table aria-labelledby="tableTitle">
+                    <TableBody sx={{ "& td": { border: 0, paddingBottom: 0 } }}>
+                      <TableRow>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }}>subtotal</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">143.71</TableCell>
+                      </TableRow>
+                      <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, textTransform: 'lowercase' }}>{tab.location.city}, {tab.location.state} ({tab.location.taxrate * 100}%)</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">6.35</TableCell>
+                      </TableRow>
+                      <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }}>tip (15%)</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">12.89</TableCell>
+                      </TableRow>
+                      <TableRow sx={{ "& td": { paddingTop: "0.75rem", fontWeight: 700 }}}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, color: "secondary.main" }}>total</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">162.90</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+                <Divider sx={{ marginTop: "1.1rem", marginBottom: "0.5rem" }} />
+                {isLoggedIn && (
+                  <Stack direction="row" paddingLeft="12px" paddingRight="12px" paddingTop="0.5rem" paddingBottom="0.3rem">
+                    <Button aria-label="invite" variant="contained" color="primary" sx={{ width: "48%", marginRight: "4%" }}>Invite</Button>
+                    <Button aria-label="edit-list" variant="outlined" color="primary" sx={{ width: "48%" }}>Edit List</Button>
+                  </Stack>
+                )}
+                <TableContainer>
+                  <Table aria-labelledby="tableTitle">
+                    <TableBody sx={{ "& td": { border: 0, paddingBottom: 0 } }}>
+                      <TableRow sx={{ "& td": { paddingTop: "0.6rem" }}}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, textTransform: 'lowercase' }}>alan</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">10.75</TableCell>
+                      </TableRow>
+                      <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, textTransform: 'lowercase' }}>brie</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">86.37</TableCell>
+                      </TableRow>
+                      <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, textTransform: 'lowercase' }}>carlos</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">4.21</TableCell>
+                      </TableRow>
+                      <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, textTransform: 'lowercase' }}>claude</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">53.84</TableCell>
+                      </TableRow>
+                      <TableRow sx={{ "& td": { paddingTop: "0.15rem" } }}>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, textTransform: 'lowercase' }}>meghna</TableCell>
+                        <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">29.09</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+                <Typography color="gray.main" fontSize={{md: "0.8rem", xl: "0.95rem"}} marginLeft="1rem" marginTop="1rem">hover/click a name to see split</Typography>
+              </Stack> */}
+            </Stack>
+          </Stack>
           <Box width={{ sm: "30px", md: "60px", xl: "5%" }} />
           <Stack direction="column" width={{ sm: "300px", md: "500px", xl: "40%" }}>
             <TableContainer>
