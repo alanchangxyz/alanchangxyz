@@ -90,7 +90,7 @@ const Tab = () => {
           direction="row"
           justifyContent="space-around"
         >
-          <Stack direction="column">
+          <Stack direction="column" sx={{ width: "100%" }}>
             <Stack
               direction="row"
               justifyContent="flex-start"
