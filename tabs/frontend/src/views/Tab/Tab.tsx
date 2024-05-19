@@ -100,6 +100,7 @@ const Tab = () => {
                 variant="h1"
                 color="primary.main"
                 textTransform="lowercase"
+                // borderTop="1px solid red"
               >
                 {tab.title}
               </Typography>
@@ -245,11 +246,11 @@ const Tab = () => {
             </Stack>
           </Stack>
           <Box width={{ sm: "30px", md: "60px", xl: "5%" }} />
-          <Stack direction="column" width={{ sm: "300px", md: "500px", xl: "40%" }}>
-            <TableContainer>
+          <Stack direction="column" width={{ sm: "300px", md: "500px", xl: "40%" }} marginTop="1.25rem">
+            <TableContainer sx={{ marginTop: isLoggedIn ? 0 : "3%",  }}>
               <Table aria-labelledby="tableTitle">
                 <TableBody sx={{ "& td": { border: 0, paddingBottom: 0 } }}>
-                  <TableRow>
+                  <TableRow sx={{ "& td": { paddingTop: "0.25rem" }}}>
                     <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }}>subtotal</TableCell>
                     <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">143.71</TableCell>
                   </TableRow>
