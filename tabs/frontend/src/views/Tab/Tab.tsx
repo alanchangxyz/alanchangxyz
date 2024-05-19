@@ -105,14 +105,17 @@ const Tab = () => {
               <ContentCopy sx={{
                 color: "gray.main",
                 width: "1.05rem",
+                paddingTop: "0.05rem",
+                paddingLeft: "0.05rem",
+                paddingRight: "0.2rem",
               }} />
             )}
             sx={{
               marginTop: "1.2rem",
-              marginLeft: "0.5rem",
+              marginLeft: "0.6rem",
               paddingLeft: "0.7rem",
               paddingRight: "0.7rem",
-              paddingTop: "0.2rem",
+              paddingTop: "0.4rem",
               paddingBottom: 0,
               userSelect: "unset",
             }}
@@ -193,20 +196,23 @@ const Tab = () => {
                     <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">12.89</TableCell>
                   </TableRow>
                   <TableRow sx={{ "& td": { paddingTop: "0.75rem", fontWeight: 700 }}}>
-                    <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, color: theme.palette.primary.main }}>total</TableCell>
+                    <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, color: "secondary.main" }}>total</TableCell>
                     <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">162.90</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
             </TableContainer>
-            <Divider sx={{ marginTop: "1.1rem" }} />
-            {/* <Divider sx={{ marginTop: "0.8rem", marginBottom: "0.5rem" }} /> */}
-            {/* <Typography fontSize={{ md: '1rem', xl: '1.17rem' }} fontWeight={700} marginLeft="0.95rem">splits</Typography> */}
-            {/* <Divider sx={{ marginTop: "0.5rem", marginBottom: "0.15rem" }} /> */}
+            <Divider sx={{ marginTop: "1.1rem", marginBottom: "0.5rem" }} />
+            {isLoggedIn && (
+              <Stack direction="row" paddingLeft="12px" paddingRight="12px" paddingTop="0.5rem" paddingBottom="0.3rem">
+                <Button aria-label="invite" variant="contained" color="primary" sx={{ width: "48%", marginRight: "4%" }}>Invite</Button>
+                <Button aria-label="edit-list" variant="outlined" color="primary" sx={{ width: "48%" }}>Edit List</Button>
+              </Stack>
+            )}
             <TableContainer>
               <Table aria-labelledby="tableTitle">
                 <TableBody sx={{ "& td": { border: 0, paddingBottom: 0 } }}>
-                  <TableRow>
+                  <TableRow sx={{ "& td": { paddingTop: "0.6rem" }}}>
                     <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' }, textTransform: 'lowercase' }}>alan</TableCell>
                     <TableCell sx={{ fontSize: { md: '1rem', xl: '1.17rem' } }} align="right">10.75</TableCell>
                   </TableRow>
@@ -229,8 +235,7 @@ const Tab = () => {
                 </TableBody>
               </Table>
             </TableContainer>
-            <Typography color="gray.main" fontSize={{md: "0.8rem", xl: "0.95rem"}} marginLeft="1rem" marginTop="1rem">hover/click to see split</Typography>
-            {/* <Divider sx={{ marginTop: "1.1rem" }} /> */}
+            <Typography color="gray.main" fontSize={{md: "0.8rem", xl: "0.95rem"}} marginLeft="1rem" marginTop="1rem">hover/click a name to see split</Typography>
           </Stack>
         </Stack>
       </Box>

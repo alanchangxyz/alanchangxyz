@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Avatar,
   AvatarGroup,
@@ -16,6 +17,8 @@ import {
 } from '@mui/material';
 
 import { dayAbbrs } from '../../utils/date';
+
+import './Tabs.css';
 
 const data = [
   {
@@ -177,7 +180,14 @@ const Tabs = () => {
           </TableHead>
           <TableBody>
             {data.map((entry) => (
-              <TableRow key={entry.id}>
+              <TableRow
+                hover
+                className="tabs-display-row"
+                key={entry.id}
+                component={Link}
+                to={`/tabs/${entry.id}`}
+                sx={{ '&:hover': { backgroundColor: 'primary.main !important' } }}
+              >
                 <TableCell align="left">{formatDate(entry.date)}</TableCell>
                 <TableCell align="left">{formatLocation(entry.title, entry.location)}</TableCell>
                 <TableCell align="left" sx={{ width: 1/2 }}>{generateAvatars()}</TableCell>

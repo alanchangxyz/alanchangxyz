@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 
 import ProtectedRoute from './auth/ProtectedRoute';
+import VenmoRedirect from './components/VenmoRedirect';
 import { AuthProvider } from './auth/context';
 
 import Home from './views/Home/Home';
@@ -12,7 +13,6 @@ import Tabs from './views/Tabs/Tabs';
 
 import theme from './theme';
 import './index.css';
-import VenmoRedirect from './components/VenmoRedirect';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
