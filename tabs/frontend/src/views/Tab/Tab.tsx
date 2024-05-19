@@ -76,7 +76,7 @@ const Tab = () => {
           <Stack
             direction="row"
             justifyContent="flex-start"
-            sx={{ marginTop: "1%", marginLeft: { xs: "16px" } }}
+            sx={{ marginTop: "1%", marginLeft: { xs: "16px", md: "12px" } }}
           >
             <Link component={RouterLink} to="/tabs" underline="none">
               <Typography
