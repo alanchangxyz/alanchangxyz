@@ -15,8 +15,7 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
-import { Check, ContentCopy } from '@mui/icons-material';
-import { useTheme } from '@mui/material/styles';
+import { Check, ContentCopy, EditOutlined, GroupAdd } from '@mui/icons-material';
 
 import { useAuth } from '../../auth/context';
 
@@ -52,11 +51,20 @@ const data = [
       taxrate: 0.095
     }
   },
+  {
+    title: "Chan Chan",
+    date: new Date(2022, 9, 4),
+    location: {
+      city: "Irvine",
+      secondary: "Walnut Village",
+      state: "CA",
+      taxrate: 0.0775
+    }
+  },
 ];
 
 const Tab = () => {
   const { isLoggedIn } = useAuth();
-  const theme = useTheme();
   const tab = data[Math.floor(Math.random() * data.length)];
   const [copySnackbarVisible, setCopySnackbarVisible] = useState(false);
 
@@ -205,8 +213,25 @@ const Tab = () => {
             <Divider sx={{ marginTop: "1.1rem", marginBottom: "0.5rem" }} />
             {isLoggedIn && (
               <Stack direction="row" paddingLeft="12px" paddingRight="12px" paddingTop="0.5rem" paddingBottom="0.3rem">
-                <Button aria-label="invite" variant="contained" color="primary" sx={{ width: "48%", marginRight: "4%" }}>Invite</Button>
-                <Button aria-label="edit-list" variant="outlined" color="primary" sx={{ width: "48%" }}>Edit List</Button>
+                <Button
+                  disableElevation
+                  aria-label="invite"
+                  variant="contained"
+                  color="primary"
+                  sx={{ width: "48%", marginRight: "4%" }}
+                  startIcon={<GroupAdd />}
+                >
+                  Invite
+                </Button>
+                <Button
+                  aria-label="edit-list"
+                  variant="outlined"
+                  color="primary"
+                  sx={{ width: "48%" }}
+                  startIcon={<EditOutlined />}
+                >
+                  Edit List
+                </Button>
               </Stack>
             )}
             <TableContainer>
@@ -235,7 +260,14 @@ const Tab = () => {
                 </TableBody>
               </Table>
             </TableContainer>
-            <Typography color="gray.main" fontSize={{md: "0.8rem", xl: "0.95rem"}} marginLeft="1rem" marginTop="1rem">hover/click a name to see split</Typography>
+            <Typography
+              color="gray.main"
+              fontSize={{ md: "0.8rem", xl: "0.95rem" }}
+              marginLeft="1rem"
+              marginTop="1rem"
+            >
+              hover/click a name to see split
+            </Typography>
           </Stack>
         </Stack>
       </Box>
