@@ -5,6 +5,7 @@ import express from 'express';
 import tabsRouter from './routes/tabs.js';
 import usersRouter from './routes/users.js';
 
+import nominatim from './services/nominatim.js';
 import yelp from './services/yelp.js';
 
 dotenv.config();
@@ -31,6 +32,12 @@ app.get('/', async (req, res) => {
   } catch (e) {
     return res.status(500).send(`/ - ${e.status} - ${e.message}`);
   }
+});
+
+app.get('/nominatim', async (req, res) => {
+  const { street, city } = req.query;
+  const result = await nominatim().searchByStreetAndCity(street, city);
+  return res.status(200).json(result);
 });
 
 app.get('/yelp', async (req, res) => {
