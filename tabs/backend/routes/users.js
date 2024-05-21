@@ -40,7 +40,7 @@ router.route('/:id')
     return res.status(200).json(result);
   })
   .put(async (req, res) => {
-
+    return res.status(500);
   })
   .delete(async (req, res) => {
     const result = await mdb.db("db").collection("users").deleteOne({ id });
