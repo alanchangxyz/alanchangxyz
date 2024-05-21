@@ -18,7 +18,7 @@ const router = express.Router();
 
 router.route('/')
   .get(async (req, res) => {
-    const result = await mdb.db("db").collection("users").find();
+    const result = await mdb.db("db").collection("users").find().toArray();
     return res.status(200).json(result);
   })
   .post(async (req, res) => {
@@ -36,6 +36,7 @@ router.route('/')
 
 router.route('/:id')
   .get(async (req, res) => {
+    const { id } = req.params;
     const result = await mdb.db("db").collection("users").findOne({ id });
     return res.status(200).json(result);
   })
@@ -43,6 +44,7 @@ router.route('/:id')
     return res.status(500);
   })
   .delete(async (req, res) => {
+    const { id } = req.params;
     const result = await mdb.db("db").collection("users").deleteOne({ id });
     return res.status(200).json({ deleted: result.deletedCount });
   });
