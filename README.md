@@ -1,21 +1,19 @@
 ## 🍊 hello! you've arrived at [@alanchangxyz](https://github.com/alanchangxyz)
 
 👋 I'm Alan Chang,
-- 💻 a senior studying computer science at UC Irvine,
+- 💻 a software engineer currently in Seattle,
 - 🌉 a San Francisco Bay Area native,
 - 🍝 and an enjoyer of the best pastas around.
 
-I'm passionate about solving both the big and the little problems in life and I'm always up for a fun challenge! 
+I'm always looking for ways to improve things, no matter how big or small! I spend lots of time focusing on better processes to build better products with less time and effort.
 
 ## 🌺 previously...
-I interned at Amazon in Summer 2022 and 2023, where I built DevOps monitoring for a new page architecture for AWS Cost Explorer and prototyped a fullstack tool for building new page configurations!
 
-I was also one of two Technical Directors at **[Commit the Change](https://github.com/ctc-uci)**, a student organization empowering Southern California nonprofits with customized pro bono software solutions to address their needs. I contributed extensively to the club's technical planning and implementation processes, and created partnerships with nonprofits that continue to generate impact in the present day!
+I obtained my degree in computer science this past year from the University of California, Irvine!
 
-## 🚀 currently...
-I'm looking for new grad SWE roles while finishing up my bachelor's degree at UC Irvine to graduate in Spring 2024!
+As an advisor and organizer at [Hack at UCI](https://hack.ics.uci.edu), I spearheaded initiatives behind the scenes of Orange County's largest collegiate hackathons to leverage growth opportunities, mentor new organizers, and increase hacker & sponsor engagement. I also advised for [ZotHacks](https://zothacks.com) and [VenusHacks](https://venushacks.com), events which catered towards first-time and underrepresented hackathon participants.
 
-I'm also behind the scenes year-round at UC Irvine's hackathons as part of **[Hack at UCI](https://hack.ics.uci.edu)**, in the forms of **[ZotHacks](https://zothacks.com)**, **[Hack@UCI](https://hackuci.com)**, and **[VenusHacks](https://venushacks.com)**.
+As a member of the inaugural cohort and through multiple leadership roles at [Commit the Change](https://github.com/ctc-uci), I worked extensively with Southern California nonprofits to generate social impact by addressing organizational needs and eliminating procedural bottlenecks through customized, pro bono software partnerships. I contributed to nine different nonprofit projects, and implemented and standardized processes for outreach, internal planning, and technical development which continue to be used today!
 
 ## 💭 in time...
 
