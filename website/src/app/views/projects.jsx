@@ -11,15 +11,16 @@ const projects = {
       description: (
         <p>
           Prototyped fullstack customization of billing insights for the AWS
-          Cost Explorer management console in Summer 2022. Building operational
-          monitoring dashboards for Cost Explorer console pages in Summer 2023.
+          Cost Management console in Summer 2022. Built operational
+          monitoring dashboards & infrastructure-as-code for Billing & Cost
+          Management console pages in Summer 2023.
         </p>
       ),
     },
     {
       name: "Commit the Change",
       // tech: ['React', 'Framer Motion'],
-      subhead: "Technical Director | 2022-2023",
+      subhead: "VP of Projects | 2022-2023",
       color: "#6331d8",
       description: (
         <p>
@@ -55,18 +56,18 @@ const projects = {
         </p>
       ),
     },
-    {
-      name: "Commit the Change Website",
-      // tech: ['React', 'Framer Motion'],
-      subhead: "Summer 2022",
-      color: "#6331d8",
-      description: (
-        <p>
-          A new, animated look for UCI&apos;s web dev collective to better
-          engage with students and nonprofit partners.
-        </p>
-      ),
-    },
+    // {
+    //   name: "Commit the Change Website",
+    //   // tech: ['React', 'Framer Motion'],
+    //   subhead: "Summer 2022",
+    //   color: "#6331d8",
+    //   description: (
+    //     <p>
+    //       A new, animated look for UCI&apos;s web dev collective to better
+    //       engage with students and nonprofit partners.
+    //     </p>
+    //   ),
+    // },
     {
       name: "Get Inspired",
       // subhead: 'React, Express, MySQL',

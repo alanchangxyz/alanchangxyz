@@ -84,7 +84,7 @@ const Home = () => {
                     transition={transitionConfigs.simple(0.5, 0.8)}
                     {...animationStates.whileInView(true)}
                   >
-                    University of California, Irvine - Computer Science
+                    software engineer, uc irvine alum
                   </motion.p>
                 </div>
                 <div className={styles.h1BT}>
@@ -95,16 +95,15 @@ const Home = () => {
                     {...animationStates.whileInView(true)}
                   >
                     Passionate about using tech to bring about exceptional
-                    change and social good. Excited to tackle new challenges with
-                    previous experience in software design & development at {" "}
+                    change and social good. Currently building at {" "}
                     <a
                       className={styles.h1RL}
                       href="https://aws.com"
                       alt="Amazon"
                     >
                       Amazon
-                    </a>{" "}
-                    and{" "}
+                    </a>
+                    , and previously {" "}
                     <a
                       className={styles.h1RL}
                       href="https://ctc-uci.com"
@@ -121,8 +120,7 @@ const Home = () => {
                     {...animationStates.whileInView(true)}
                   >
                     My interests include DevOps, AI & ML, and trying the best
-                    food Orange County has to offer. You can see my work and
-                    connect here 👇
+                    food around. You can see my work and connect here 👇
                   </motion.p>
                   <motion.div
                     className={styles.home1BottomBoxButtons}
@@ -249,22 +247,21 @@ const Home = () => {
                     </span>
                   </p>
                   <p className={styles.home1BottomBoxSubhead}>
-                    UC Irvine - Computer Science
+                    software engineer, uc irvine alum
                   </p>
                 </div>
                 <div className={styles.home1BottomBoxBody}>
                   <p className={styles.home1BottomBoxBodyP}>
                     Passionate about using tech to bring about exceptional
-                    change and social good. Excited to tackle new challenges with
-                    previous experience in software design & development at {" "}
+                    change and social good. Currently building at {" "}
                     <a
                       className={styles.h1RL}
                       href="https://aws.com"
                       alt="Amazon"
                     >
                       Amazon
-                    </a>{" "}
-                    and{" "}
+                    </a>
+                    , and previously{" "}
                     <a
                       className={styles.h1RL}
                       href="https://ctc-uci.com"
@@ -276,8 +273,7 @@ const Home = () => {
                   </p>
                   <p className={styles.home1BottomBoxBodyP}>
                     My interests include DevOps, AI & ML, and trying the best
-                    food Orange County has to offer. You can see my work and
-                    connect here 👇
+                    food around. You can see my work and connect here 👇
                   </p>
                   <div className={styles.home1BottomBoxButtons}>
                     <a

@@ -16,10 +16,10 @@ const App = () => {
       <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Home />} />
+          <Route path="/calendly" element={<Redirect url="https://calendly.com/acxyz/open" />} />
           <Route path="/email" element={<Redirect url="mailto:alan@alanchang.xyz" />} />
           <Route path="/github" element={<Redirect url="https://github.com/alanchangxyz" />} />
           <Route path="/linkedin" element={<Redirect url="https://linkedin.com/in/acxyz" />} />
-          <Route path="/the-county" element={<Redirect url="https://www.notion.so/acxyz/the-county-9c590d5f68b04125bb671fc2fd51d9fc" />} />
           <Route path="/venmo" element={<Redirect mobileUrl="venmo://paycharge?txn=pay&recipients=alanchangxyz" url="https://venmo.com/alanchangxyz?txn=pay" />} />
           <Route path="/netwics-slides" element={<Redirect url="https://docs.google.com/presentation/d/1t65EzhxGAYjgDQDcdoa9pvL2jk5JMLLUkUAQfLCoOTQ/edit?pli=1#slide=id.p" />} />
           <Route path="/netwics-demo" element={<Redirect url="https://codesandbox.io/s/netwics-workshop-s1ef3m?file=/src/App.js" />} />
