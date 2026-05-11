@@ -1,0 +1,40 @@
+@import "../../../styles/common.css";
+
+.projectsGridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  padding-top: 6%;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.titleCard {
+  padding: 12px 16px;
+}
+
+.titleCardItalic {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.titleCardBold {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.squareCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  user-select: none;
+}
+
+
+@media (max-width: 1100px) {
+  .projectsGridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

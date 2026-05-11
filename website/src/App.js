@@ -4,7 +4,7 @@ import ReactGA from "react-ga4";
 import { AnimatePresence } from "framer-motion";
 
 import Redirect from "./app/components/Redirect/Redirect";
-import Home from "./app/views/Home/Home";
+import Home from "./app/views/Home";
 
 const App = () => {
   ReactGA.initialize("G-H3X1SVSLE4");

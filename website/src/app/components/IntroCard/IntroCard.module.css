@@ -1,0 +1,184 @@
+.box {
+  background-color: var(--light-purple);
+  border-radius: 20px;
+  border: 3px solid #111;
+  box-shadow: 4px 3px 0 #111;
+}
+
+.headerContainer {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom: 3px solid #111;
+  background-color: var(--purple);
+  padding: 20px 24px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+.headerName {
+  margin-top: 2px;
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+
+.headerNameAlt {
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.headerSecondary {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.bodyContainer {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 135%;
+  color: #111;
+}
+
+.introContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.introTextContainer {
+  width: 80%;
+}
+
+.bodyParagraph {
+  margin-top: 6px;
+  margin-bottom: 24px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.socialLinksContainer {
+  margin-top: 8px;
+  margin-left: 48px;
+  margin-right: 0;
+  width: calc(40% - 16px);
+}
+
+.socialLinkButton {
+  border: 3px solid #111;
+  box-shadow: 2px 1.5px 0px #111;
+  color: #111;
+  padding: 6px 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.socialLinkButton:hover {
+  background-color: var(--dark-orange);
+  color: white;
+  transition: all 0.25s ease-in-out;
+}
+
+.socialLinkButtonIcon {
+  margin: 6px 6px 0 4px;
+  height: 24px;
+}
+
+.socialLinkButtonText {
+  margin: 6px 8px 0 2px;
+  float: right;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1920px) {
+  .box, .headerContainer {
+    border-width: 2px;
+  }
+
+  .bodyParagraph {
+    margin-top: 4px;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+
+  .headerName {
+    font-size: 24px;
+  }
+
+  .headerNameAlt {
+    margin-left: 6px;
+    font-size: 18px;
+  }
+
+  .headerSecondary {
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  .bodyParagraph {
+    line-height: 24px;
+  }
+
+  .socialLinkButton {
+    border-width: 2px;
+    padding: 3px 8px;
+  }
+
+  .socialLinkButtonIcon {
+    margin: 6px 6px 0px 6px;
+    height: 22px;
+  }
+
+  .socialLinkButtonText {
+    margin: 4px 8px 0 2px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .introContainer {
+    flex-direction: column;
+  }
+
+  .introTextContainer {
+    width: 100%;
+  }
+
+  .socialLinksContainer {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .introContainer {
+    flex-direction: column;
+  }
+
+  .introTextContainer {
+    width: 100%;
+  }
+
+  .socialLinksContainer {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  .bodyParagraph:first-child {
+    display: none;
+  }
+}

@@ -11,6 +11,12 @@ div {
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* .container {
   display: flex;
   flex-direction: column;

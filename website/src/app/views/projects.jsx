@@ -1,5 +1,12 @@
 import React from "react";
 
+import gsp from '../../images/get-inspired.webp';
+import fya from '../../images/find-your-anchor.webp';
+import och from '../../images/oc-habitats.webp';
+import pnp from '../../images/patriots-and-paws.webp';
+import tlp from '../../images/the-literacy-project.webp';
+import wmk from '../../images/waymakers.webp';
+
 const projects = {
   pro: [
     {
@@ -37,6 +44,7 @@ const projects = {
       // subhead: 'React, Express, MongoDB',
       subhead: "Summer 2022 - Winter 2023",
       color: "#2BC0E3",
+      image: och,
       description: (
         <p>
           Habitat monitoring log aggregation to help a conservation nonprofit
@@ -49,6 +57,7 @@ const projects = {
       // subhead: 'React, Express, PostgreSQL',
       subhead: "Fall 2022 - Spring 2023",
       color: "#c53030",
+      image: pnp,
       description: (
         <p>
           Furniture inventory management and donation processing for a nonprofit
@@ -56,23 +65,12 @@ const projects = {
         </p>
       ),
     },
-    // {
-    //   name: "Commit the Change Website",
-    //   // tech: ['React', 'Framer Motion'],
-    //   subhead: "Summer 2022",
-    //   color: "#6331d8",
-    //   description: (
-    //     <p>
-    //       A new, animated look for UCI&apos;s web dev collective to better
-    //       engage with students and nonprofit partners.
-    //     </p>
-    //   ),
-    // },
     {
       name: "Get Inspired",
       // subhead: 'React, Express, MySQL',
       subhead: "Fall 2022 - Spring 2023",
       color: "#80c41b",
+      image: gsp,
       description: (
         <p>
           Specialized database-style management and querying of Pismo Clam
@@ -81,14 +79,15 @@ const projects = {
       ),
     },
     {
-      name: "Cell Dogs",
-      // subhead: 'React, Express, MySQL',
-      subhead: "Fall 2022 - Spring 2023",
-      color: "#21307a",
+      name: "Find Your Anchor",
+      // subhead: 'React, Express, PostgreSQL',
+      subhead: "Summer 2022 - Spring 2023",
+      color: "#345e80",
+      image: fya,
       description: (
         <p>
-          Internal tracking system for training dogs used in Cell Dogs&apos;
-          Orange County-based probation program.
+          Mapping physical locations of mental wellness caches
+          for an Orange County nonprofit spreading them across the world.
         </p>
       ),
     },
@@ -97,6 +96,7 @@ const projects = {
       // subhead: 'React, Express, PostgreSQL',
       subhead: "Summer 2021 - Spring 2022",
       color: "#a6831f",
+      image: tlp,
       description: (
         <p>
           District, school, and class-level segmentation of student scores and
@@ -106,22 +106,11 @@ const projects = {
       ),
     },
     {
-      name: "Abound Food Care",
-      // subhead: 'React, Express, PostgreSQL',
-      subhead: "Summer 2022 - Winter 2023",
-      color: "#115740",
-      description: (
-        <p>
-          Volunteer and event management for Orange County&apos;s largest
-          proponent of food conservation and recovery.
-        </p>
-      ),
-    },
-    {
       name: "Waymakers",
       // subhead: 'React, Express, MySQL',
       subhead: "Fall 2020 - Spring 2021",
       color: "#003e53",
+      image: wmk,
       description: (
         <p>
           Inventory management of essential items spanning multiple warehouse

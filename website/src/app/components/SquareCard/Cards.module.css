@@ -1,0 +1,96 @@
+@import "../../../styles/common.css";
+
+.squareCard, .rectangleCard {
+  background-color: var(--light-purple);
+  border-radius: 20px;
+  border: 3px solid #111;
+  box-shadow: 4px 3px 0 #111;
+  margin: 1% 0;
+  box-sizing: border-box;
+}
+
+.squareCard {
+  grid-column: span 1;
+}
+
+.rectangleCard {
+  grid-column: span 2;
+}
+
+.projectCardHeader {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom: 3px solid #111;
+  padding: 18px 18px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectCardContent {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 16px 18px 18px 18px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 145%;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectCardImage {
+  width: 75%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@media screen and (max-width: 1920px) {
+  .squareCard, .rectangleCard {
+    border-width: 2px;
+  }
+
+  .projectCardHeader {
+    border-width: 2px;
+    font-size: 18px;
+    padding: 15px 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rectangleCard {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .squareCard,
+  .rectangleCard {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  .desktopGridTitleCardText {
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  .projectCardHeader {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .projectCardContent {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
